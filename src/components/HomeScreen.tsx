@@ -138,9 +138,7 @@ const HomeScreen = () => {
 
           {accountId ? (
             <View style={styles.playerChip}>
-              <Text style={styles.playerChipText}>
-                Player #{accountId}
-              </Text>
+              <Text style={styles.playerChipText}>Player #{accountId}</Text>
             </View>
           ) : null}
         </View>
@@ -150,7 +148,10 @@ const HomeScreen = () => {
           <View style={styles.roomOptionsContainer}>
             {/* Join Room Option */}
             <TouchableOpacity
-              style={[styles.roomCard, isCreatingRoom && styles.roomCardDisabled]}
+              style={[
+                styles.roomCard,
+                isCreatingRoom && styles.roomCardDisabled,
+              ]}
               activeOpacity={0.85}
               onPress={() => navigate("/join-room")}
               disabled={isCreatingRoom}
@@ -174,7 +175,9 @@ const HomeScreen = () => {
                 <Users color={cardTable.felt} size={26} />
               </View>
               <View style={styles.roomOptionTextContainer}>
-                <Text style={[styles.roomOptionEyebrow, { color: cardTable.felt }]}>
+                <Text
+                  style={[styles.roomOptionEyebrow, { color: cardTable.felt }]}
+                >
                   MULTIPLAYER
                 </Text>
                 <Text style={styles.roomOptionTitle}>Join Room</Text>
@@ -195,7 +198,10 @@ const HomeScreen = () => {
 
             {/* Create Room Option */}
             <TouchableOpacity
-              style={[styles.roomCard, isCreatingRoom && styles.roomCardDisabled]}
+              style={[
+                styles.roomCard,
+                isCreatingRoom && styles.roomCardDisabled,
+              ]}
               activeOpacity={0.85}
               onPress={createRoom}
               disabled={isCreatingRoom}
@@ -223,7 +229,12 @@ const HomeScreen = () => {
                 )}
               </View>
               <View style={styles.roomOptionTextContainer}>
-                <Text style={[styles.roomOptionEyebrow, { color: cardTable.goldDark }]}>
+                <Text
+                  style={[
+                    styles.roomOptionEyebrow,
+                    { color: cardTable.goldDark },
+                  ]}
+                >
                   HOST A TABLE
                 </Text>
                 <Text style={styles.roomOptionTitle}>Create Room</Text>
