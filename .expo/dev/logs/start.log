@@ -1,0 +1,540 @@
+{"_e":"root:init","_t":1788425667851,"format":"v0-jsonl","version":"57.0.21"}
+{"_e":"env:mode","_t":1788425667851,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1788425667852,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1788425667972,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1788425668232,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1788425668317,"plugins":[]}
+{"_e":"metro:instantiate","_t":1788425668535,"atlas":false,"workers":7,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1788425673378,"id":"5","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788425673378,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788425673382,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788425673615,"id":"5","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1788425673716,"id":"5","progress":0.029149315883402742,"total":41,"current":7}
+{"_e":"metro:bundling:progress","_t":1788425673866,"id":"5","progress":0.04474852071005917,"total":52,"current":11}
+{"_e":"metro:bundling:progress","_t":1788425673967,"id":"5","progress":0.04474852071005917,"total":206,"current":43}
+{"_e":"metro:bundling:progress","_t":1788425674068,"id":"5","progress":0.07728861417675316,"total":241,"current":67}
+{"_e":"metro:bundling:progress","_t":1788425674168,"id":"5","progress":0.09812744955726521,"total":249,"current":78}
+{"_e":"metro:bundling:progress","_t":1788425674268,"id":"5","progress":0.1495111111111111,"total":300,"current":116}
+{"_e":"metro:bundling:progress","_t":1788425674369,"id":"5","progress":0.20985612184388752,"total":358,"current":164}
+{"_e":"metro:bundling:progress","_t":1788425674471,"id":"5","progress":0.2624050845828527,"total":408,"current":209}
+{"_e":"metro:bundling:progress","_t":1788425674571,"id":"5","progress":0.27700831024930744,"total":513,"current":270}
+{"_e":"metro:bundling:progress","_t":1788425674671,"id":"5","progress":0.3034329215742602,"total":590,"current":325}
+{"_e":"metro:bundling:progress","_t":1788425674828,"id":"5","progress":0.3034329215742602,"total":2299,"current":343}
+{"_e":"metro:bundling:progress","_t":1788425674928,"id":"5","progress":0.3034329215742602,"total":2314,"current":389}
+{"_e":"metro:bundling:progress","_t":1788425675029,"id":"5","progress":0.3034329215742602,"total":2354,"current":438}
+{"_e":"metro:bundling:progress","_t":1788425675129,"id":"5","progress":0.3034329215742602,"total":2395,"current":521}
+{"_e":"metro:bundling:progress","_t":1788425675229,"id":"5","progress":0.3034329215742602,"total":2412,"current":604}
+{"_e":"metro:bundling:progress","_t":1788425675329,"id":"5","progress":0.3034329215742602,"total":2424,"current":835}
+{"_e":"metro:bundling:progress","_t":1788425675429,"id":"5","progress":0.3034329215742602,"total":2424,"current":1062}
+{"_e":"metro:bundling:progress","_t":1788425675529,"id":"5","progress":0.3034329215742602,"total":2424,"current":1303}
+{"_e":"metro:bundling:progress","_t":1788425675629,"id":"5","progress":0.3768258013920204,"total":2424,"current":1488}
+{"_e":"metro:bundling:progress","_t":1788425675737,"id":"5","progress":0.4275562921391149,"total":2424,"current":1585}
+{"_e":"metro:bundling:progress","_t":1788425675838,"id":"5","progress":0.458860923221035,"total":2424,"current":1642}
+{"_e":"metro:bundling:progress","_t":1788425675939,"id":"5","progress":0.5319848816564824,"total":2424,"current":1768}
+{"_e":"metro:bundling:progress","_t":1788425676039,"id":"5","progress":0.6208711836530187,"total":2424,"current":1910}
+{"_e":"metro:bundling:progress","_t":1788425676139,"id":"5","progress":0.722920853347711,"total":2424,"current":2061}
+{"_e":"metro:bundling:progress","_t":1788425676240,"id":"5","progress":0.7933047481728371,"total":2424,"current":2159}
+{"_e":"metro:bundling:progress","_t":1788425676341,"id":"5","progress":0.8470984938840418,"total":2424,"current":2231}
+{"_e":"metro:bundling:progress","_t":1788425676442,"id":"5","progress":0.9213799558295909,"total":2443,"current":2345}
+{"_e":"metro:bundling:progress","_t":1788425676543,"id":"5","progress":0.9443671947104321,"total":2481,"current":2411}
+{"_e":"metro:bundling:progress","_t":1788425676643,"id":"5","progress":0.9614891975308641,"total":2520,"current":2471}
+{"_e":"metro:bundling:progress","_t":1788425676743,"id":"5","progress":0.9614891975308641,"total":2567,"current":2511}
+{"_e":"metro:bundling:progress","_t":1788425676843,"id":"5","progress":0.9614891975308641,"total":2610,"current":2550}
+{"_e":"metro:bundling:progress","_t":1788425676944,"id":"5","progress":0.9614891975308641,"total":2731,"current":2605}
+{"_e":"metro:bundling:progress","_t":1788425677044,"id":"5","progress":0.9614891975308641,"total":2746,"current":2690}
+{"_e":"metro:bundling:progress","_t":1788425677144,"id":"5","progress":0.9727318194727521,"total":2768,"current":2730}
+{"_e":"metro:bundling:progress","_t":1788425677246,"id":"5","progress":0.9942487538361943,"total":2778,"current":2770}
+{"_e":"metro:bundling:progress","_t":1788425677347,"id":"5","progress":0.9985611512654475,"total":2779,"current":2777}
+{"_e":"metro:bundling:progress","_t":1788425677467,"id":"5","progress":0.999,"total":2779,"current":2778}
+{"_e":"metro:bundling:progress","_t":1788425677568,"id":"5","progress":0.999,"total":2782,"current":2781}
+{"_e":"metro:bundling:progress","_t":1788425677642,"id":"5","progress":0.999,"total":2782,"current":2782}
+{"_e":"metro:bundling:done","_t":1788425677774,"id":"5","total":2782,"ms":4395.916417}
+{"_e":"metro:client_log","_t":1788425679863,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788425679865,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788425679865,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788425679865,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788425686538,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThis project requires a newer version of Expo Go.\n\nHow to fix this error:\nDownload the latest version of Expo Go from the Play Store."]}
+{"_e":"metro:client_log","_t":1788425702604,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThis project requires a newer version of Expo Go.\n\nHow to fix this error:\nDownload the latest version of Expo Go from the Play Store."]}
+{"_e":"metro:bundling:started","_t":1788425743459,"id":"9","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788425743459,"id":"9","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788425743513,"id":"9","total":1,"ms":53.962708}
+{"_e":"metro:client_log","_t":1788425747007,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788425747007,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788425747007,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788425747007,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:bundling:started","_t":1788425753833,"id":"a","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788425753833,"id":"a","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788425753883,"id":"a","total":1,"ms":50.044209}
+{"_e":"metro:client_log","_t":1788425758410,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788425758410,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788425758410,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788425758410,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:server_log","_t":1788427684746,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","host.exp.exponent","sdk_gphone16k_arm64 - 17 - API 37","60"]}
+{"_e":"metro:server_log","_t":1788429729584,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","host.exp.exponent","sdk_gphone16k_arm64 - 17 - API 37","60"]}
+{"_e":"root:init","_t":1788808651894,"format":"v0-jsonl","version":"57.0.21"}
+{"_e":"env:mode","_t":1788808651895,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1788808651895,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1788808652291,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1788808652601,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1788808652668,"plugins":[]}
+{"_e":"metro:instantiate","_t":1788808652912,"atlas":false,"workers":7,"host":"::","port":8081}
+{"_e":"root:init","_t":1788808831132,"format":"v0-jsonl","version":"57.0.21"}
+{"_e":"env:mode","_t":1788808831132,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1788808831133,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1788808831515,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1788808831805,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1788808831876,"plugins":[]}
+{"_e":"metro:instantiate","_t":1788808832094,"atlas":false,"workers":7,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1788808867206,"id":"2","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788808867206,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788808867211,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788808867468,"id":"2","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1788808867568,"id":"2","progress":0.1111111111111111,"total":21,"current":7}
+{"_e":"metro:bundling:progress","_t":1788808867675,"id":"2","progress":0.21556122448979592,"total":28,"current":13}
+{"_e":"metro:bundling:progress","_t":1788808867776,"id":"2","progress":0.31849818645230854,"total":101,"current":57}
+{"_e":"metro:bundling:progress","_t":1788808867876,"id":"2","progress":0.3876824492702029,"total":159,"current":99}
+{"_e":"metro:bundling:progress","_t":1788808867976,"id":"2","progress":0.44934186692428446,"total":182,"current":122}
+{"_e":"metro:bundling:progress","_t":1788808868076,"id":"2","progress":0.44934186692428446,"total":246,"current":162}
+{"_e":"metro:bundling:progress","_t":1788808868176,"id":"2","progress":0.5155710830421929,"total":305,"current":219}
+{"_e":"metro:bundling:progress","_t":1788808868276,"id":"2","progress":0.5507202216066481,"total":380,"current":282}
+{"_e":"metro:bundling:progress","_t":1788808868376,"id":"2","progress":0.7193259236614551,"total":428,"current":363}
+{"_e":"metro:bundling:progress","_t":1788808868476,"id":"2","progress":0.7909332168771837,"total":488,"current":434}
+{"_e":"metro:bundling:progress","_t":1788808868595,"id":"2","progress":0.888567574187746,"total":523,"current":493}
+{"_e":"metro:bundling:progress","_t":1788808868695,"id":"2","progress":0.888567574187746,"total":2245,"current":522}
+{"_e":"metro:bundling:progress","_t":1788808868795,"id":"2","progress":0.888567574187746,"total":2247,"current":569}
+{"_e":"metro:bundling:progress","_t":1788808868895,"id":"2","progress":0.888567574187746,"total":2247,"current":786}
+{"_e":"metro:bundling:progress","_t":1788808868995,"id":"2","progress":0.888567574187746,"total":2247,"current":1005}
+{"_e":"metro:bundling:progress","_t":1788808869095,"id":"2","progress":0.888567574187746,"total":2247,"current":1273}
+{"_e":"metro:bundling:progress","_t":1788808869195,"id":"2","progress":0.888567574187746,"total":2247,"current":1557}
+{"_e":"metro:bundling:progress","_t":1788808869295,"id":"2","progress":0.888567574187746,"total":2247,"current":1828}
+{"_e":"metro:bundling:progress","_t":1788808869395,"id":"2","progress":0.888567574187746,"total":2247,"current":2103}
+{"_e":"metro:bundling:progress","_t":1788808869495,"id":"2","progress":0.9982440740875752,"total":2277,"current":2275}
+{"_e":"metro:bundling:done","_t":1788808869596,"id":"2","total":2277,"ms":2389.543667}
+{"_e":"metro:bundling:started","_t":1788808869728,"id":"3","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788808869823,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788808869824,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788808869824,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788808869824,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788808869824,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788808869824,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788808869824,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1788808869886,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:started","_t":1788808988834,"id":"7","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788808988834,"id":"7","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788808988872,"id":"7","total":1,"ms":37.565083}
+{"_e":"metro:bundling:started","_t":1788808988988,"id":"9","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788808989090,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788808989090,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788808989091,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788808989091,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788808989091,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788808989091,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788808989091,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1788808989150,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"root:init","_t":1788948310651,"format":"v0-jsonl","version":"57.0.21"}
+{"_e":"env:mode","_t":1788948310652,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1788948310653,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1788948310789,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1788948311090,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1788948311178,"plugins":[]}
+{"_e":"metro:instantiate","_t":1788948311442,"atlas":false,"workers":7,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1788949292913,"id":"1","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788949292914,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788949292918,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788949293018,"id":"1","progress":0.6818755739210285,"total":132,"current":109}
+{"_e":"metro:bundling:progress","_t":1788949293119,"id":"1","progress":0.9889197530864198,"total":180,"current":179}
+{"_e":"metro:bundling:progress","_t":1788949293297,"id":"1","progress":0.999,"total":180,"current":180}
+{"_e":"metro:bundling:progress","_t":1788949293399,"id":"1","progress":0.999,"total":238,"current":231}
+{"_e":"metro:bundling:progress","_t":1788949293614,"id":"1","progress":0.999,"total":238,"current":232}
+{"_e":"metro:bundling:progress","_t":1788949293743,"id":"1","progress":0.999,"total":1951,"current":238}
+{"_e":"metro:bundling:progress","_t":1788949293844,"id":"1","progress":0.999,"total":1960,"current":1205}
+{"_e":"metro:bundling:progress","_t":1788949293950,"id":"1","progress":0.999,"total":2065,"current":2064}
+{"_e":"metro:bundling:progress","_t":1788949294320,"id":"1","progress":0.999,"total":2065,"current":2065}
+{"_e":"metro:bundling:done","_t":1788949294355,"id":"1","total":2065,"ms":1441.529458}
+{"_e":"metro:client_log","_t":1788949294523,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788949294525,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788949294525,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788949294525,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788949294526,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788949294526,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788949294526,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1788949389202,"id":"5","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:started","_t":1788949450246,"id":"a","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788949450247,"id":"a","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788949450248,"id":"a","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788949450348,"id":"a","progress":0.10331632653061226,"total":28,"current":9}
+{"_e":"metro:bundling:progress","_t":1788949450450,"id":"a","progress":0.32653061224489793,"total":77,"current":44}
+{"_e":"metro:bundling:progress","_t":1788949450551,"id":"a","progress":0.32653061224489793,"total":207,"current":84}
+{"_e":"metro:bundling:progress","_t":1788949450651,"id":"a","progress":0.32653061224489793,"total":244,"current":110}
+{"_e":"metro:bundling:progress","_t":1788949450751,"id":"a","progress":0.3379391058208739,"total":332,"current":193}
+{"_e":"metro:bundling:progress","_t":1788949450851,"id":"a","progress":0.4046871211620269,"total":426,"current":271}
+{"_e":"metro:bundling:progress","_t":1788949450951,"id":"a","progress":0.45582316244193305,"total":511,"current":345}
+{"_e":"metro:bundling:progress","_t":1788949451051,"id":"a","progress":0.501506457327136,"total":514,"current":364}
+{"_e":"metro:bundling:progress","_t":1788949451155,"id":"a","progress":0.501506457327136,"total":2246,"current":394}
+{"_e":"metro:bundling:progress","_t":1788949451255,"id":"a","progress":0.501506457327136,"total":2323,"current":498}
+{"_e":"metro:bundling:progress","_t":1788949451355,"id":"a","progress":0.501506457327136,"total":2328,"current":713}
+{"_e":"metro:bundling:progress","_t":1788949451455,"id":"a","progress":0.501506457327136,"total":2328,"current":972}
+{"_e":"metro:bundling:progress","_t":1788949451555,"id":"a","progress":0.501506457327136,"total":2328,"current":1243}
+{"_e":"metro:bundling:progress","_t":1788949451655,"id":"a","progress":0.501506457327136,"total":2328,"current":1504}
+{"_e":"metro:bundling:progress","_t":1788949451755,"id":"a","progress":0.5800314193856945,"total":2328,"current":1773}
+{"_e":"metro:bundling:progress","_t":1788949451855,"id":"a","progress":0.7686348251083478,"total":2328,"current":2041}
+{"_e":"metro:bundling:progress","_t":1788949451955,"id":"a","progress":0.9225463770699958,"total":2354,"current":2261}
+{"_e":"metro:bundling:progress","_t":1788949452055,"id":"a","progress":0.9540103309675819,"total":2407,"current":2351}
+{"_e":"metro:bundling:progress","_t":1788949452155,"id":"a","progress":0.9540103309675819,"total":2526,"current":2432}
+{"_e":"metro:bundling:progress","_t":1788949452255,"id":"a","progress":0.9835458243290841,"total":2542,"current":2521}
+{"_e":"metro:bundling:progress","_t":1788949452356,"id":"a","progress":0.9984319876970397,"total":2550,"current":2548}
+{"_e":"metro:bundling:progress","_t":1788949452443,"id":"a","progress":0.999,"total":2550,"current":2549}
+{"_e":"metro:bundling:progress","_t":1788949452543,"id":"a","progress":0.999,"total":2563,"current":2563}
+{"_e":"metro:bundling:done","_t":1788949452626,"id":"a","total":2563,"ms":2379.816917}
+{"_e":"metro:client_log","_t":1788949460955,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788949460955,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788949460955,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788949460955,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788949461427,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:client_log","_t":1788949461464,"level":"warn","data":["⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."]}
+{"_e":"metro:bundling:started","_t":1788949474673,"id":"d","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788949474673,"id":"d","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788949474716,"id":"d","total":1,"ms":42.96075}
+{"_e":"metro:client_log","_t":1788949483458,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788949483458,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788949483458,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788949483458,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788949484430,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:client_log","_t":1788949484481,"level":"warn","data":["⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."]}
+{"_e":"metro:client_log","_t":1788949524792,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788949524798,"level":"log","data":["- Error:","[AxiosError: Network Error]"]}
+{"_e":"metro:client_log","_t":1788949524811,"level":"error","data":["Login error:","{\"code\": \"UNKNOWN_ERROR\", \"message\": \"Network Error\", \"status\": 500}"]}
+{"_e":"metro:client_log","_t":1788949524837,"level":"log","data":["Error type:","object"]}
+{"_e":"metro:client_log","_t":1788949524842,"level":"log","data":["Error details:","{\n  \"message\": \"Network Error\",\n  \"status\": 500,\n  \"code\": \"UNKNOWN_ERROR\"\n}"]}
+{"_e":"metro:client_log","_t":1788949524842,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788949528536,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788949528543,"level":"log","data":["- Error:","[AxiosError: Network Error]"]}
+{"_e":"metro:client_log","_t":1788949528543,"level":"error","data":["Login error:","{\"code\": \"UNKNOWN_ERROR\", \"message\": \"Network Error\", \"status\": 500}"]}
+{"_e":"metro:client_log","_t":1788949528543,"level":"log","data":["Error type:","object"]}
+{"_e":"metro:client_log","_t":1788949528543,"level":"log","data":["Error details:","{\n  \"message\": \"Network Error\",\n  \"status\": 500,\n  \"code\": \"UNKNOWN_ERROR\"\n}"]}
+{"_e":"metro:client_log","_t":1788949528543,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:bundling:started","_t":1788949544405,"id":"g","platform":"web","environment":null,"entry":"src/components/LoginScreen.tsx"}
+{"_e":"metro:client_log","_t":1788949704275,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788949704275,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788949704276,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788949704276,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:bundling:started","_t":1788949704279,"id":"h","platform":"web","environment":null,"entry":".env"}
+{"_e":"metro:client_log","_t":1788949704468,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788949704472,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788949704472,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788949704472,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788949732835,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788949732835,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788949732835,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788949732836,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788949732842,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788949732845,"level":"log","data":["- API_BASE_URL:","http://localhost:3000/api/v1"]}
+{"_e":"metro:client_log","_t":1788949732845,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788949732845,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:server_log","_t":1788950204086,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","host.exp.exponent","LAVA LXX501 - 12 - API 31","60"]}
+{"_e":"metro:server_log","_t":1788950204087,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","host.exp.exponent","LAVA LXX501 - 12 - API 31","60"]}
+{"_e":"metro:bundling:failed","_t":1788950268087,"id":null,"message":"SyntaxError: /Users/rahul/code/personal/rummy_frontend/src/config/env.ts: Unexpected token, expected \",\" (5:2)\n\n  3 |   API_BASE_URL:\n  4 |     \"https://stormy-uncomplemental-amina.ngrok-free.dev\" \n> 5 |   NODE_ENV: process.env.NODE_ENV || \"development\",\n    |   ^\n  6 |   APP_NAME: process.env.EXPO_PUBLIC_APP_NAME || \"SQUARDS\",\n  7 |   APP_VERSION: process.env.EXPO_PUBLIC_APP_VERSION || \"1.0.0\",\n  8 | };","importStack":null,"filename":"src/config/env.ts","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1788950284631,"id":"l","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788950284631,"id":"l","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788950284633,"id":"l","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788950284672,"id":"l","total":1,"ms":41.092583}
+{"_e":"metro:bundling:started","_t":1788950284780,"id":"n","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788950284881,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788950284881,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788950284882,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev"]}
+{"_e":"metro:client_log","_t":1788950284882,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788950284882,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788950284882,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788950284882,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1788950291164,"id":"q","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788950291164,"id":"q","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788950291196,"id":"q","total":1,"ms":31.557708}
+{"_e":"metro:bundling:started","_t":1788950291291,"id":"s","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788950291398,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788950291399,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788950291399,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev"]}
+{"_e":"metro:client_log","_t":1788950291399,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788950291399,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788950291399,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788950291399,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:server_log","_t":1788950294648,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","host.exp.exponent","LAVA LXX501 - 12 - API 31","60"]}
+{"_e":"metro:client_log","_t":1788950304017,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788950304021,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev"]}
+{"_e":"metro:client_log","_t":1788950304022,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788950304024,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788950304027,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788950304029,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev"]}
+{"_e":"metro:client_log","_t":1788950304030,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788950304030,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788950316002,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788950316003,"level":"log","data":["- Error:","[AxiosError: Network Error]"]}
+{"_e":"metro:client_log","_t":1788950316019,"level":"log","data":["Error type:","object"]}
+{"_e":"metro:client_log","_t":1788950316019,"level":"log","data":["Error details:","{\n  \"message\": \"Network Error\",\n  \"status\": 500,\n  \"code\": \"UNKNOWN_ERROR\"\n}"]}
+{"_e":"metro:client_log","_t":1788950316019,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788950316031,"level":"error","data":["Login error:","{\"code\": \"UNKNOWN_ERROR\", \"message\": \"Network Error\", \"status\": 500}","\n\n\u001b[1mCode: LoginScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 59 |\u001b[39m       }\n \u001b[90m 60 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 61 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m\"Login error:\"\u001b[39m\u001b[33m,\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 62 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m\"Error type:\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36mtypeof\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m 63 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m\"Error details:\"\u001b[39m\u001b[33m,\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(error\u001b[33m,\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m,\u001b[39m \u001b[35m2\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mif\u001b[39m (error\u001b[33m.\u001b[39mstatus \u001b[33m===\u001b[39m \u001b[35m401\u001b[39m) {\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  handleSignIn (\u001b]8;;src/components/LoginScreen.tsx:61:15\u0007src/components/LoginScreen.tsx:61:15\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1788950521416,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788950521419,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788950521419,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788950521420,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:bundling:started","_t":1788950521432,"id":"v","platform":"web","environment":null,"entry":"src/config/env.ts"}
+{"_e":"metro:client_log","_t":1788950521437,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788950521440,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788950521444,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788950521449,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788950532506,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788950533196,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788950585722,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788950594262,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1788950598990,"level":"log","data":["Create Room pressed"]}
+{"_e":"metro:client_log","_t":1788950607088,"level":"log","data":["Create Room pressed"]}
+{"_e":"metro:bundling:started","_t":1788950631868,"id":"w","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788950631868,"id":"w","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788950631916,"id":"w","total":1,"ms":48.491417}
+{"_e":"metro:client_log","_t":1788950641007,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788950641007,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788950641007,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788950641007,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788950642218,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:client_log","_t":1788950642280,"level":"warn","data":["⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath."]}
+{"_e":"metro:bundling:started","_t":1788950874987,"id":"y","platform":"web","environment":null,"entry":"src/hooks/useAndroidBackHandler.ts"}
+{"_e":"metro:bundling:started","_t":1788950874990,"id":"10","platform":"web","environment":null,"entry":"App.tsx"}
+{"_e":"metro:bundling:started","_t":1788950878200,"id":"11","platform":"web","environment":null,"entry":"App.tsx"}
+{"_e":"metro:server_log","_t":1788952473684,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","host.exp.exponent","LAVA LXX501 - 12 - API 31","60"]}
+{"_e":"metro:server_log","_t":1788952473687,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","host.exp.exponent","LAVA LXX501 - 12 - API 31","60"]}
+{"_e":"metro:bundling:started","_t":1788959515881,"id":"13","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788959515882,"id":"13","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788959515916,"id":"13","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788959516015,"id":"13","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788959516052,"id":"13","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788959516154,"id":"13","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788959516201,"id":"13","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788959516256,"id":"13","total":1,"ms":373.946833}
+{"_e":"metro:bundling:started","_t":1788959516390,"id":"15","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788959516492,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788959516492,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788959516492,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788959516492,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788959516492,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788959516492,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788959516492,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1788959521793,"id":"17","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788959521793,"id":"17","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788959521848,"id":"17","total":1,"ms":55.205333}
+{"_e":"metro:bundling:started","_t":1788959521976,"id":"19","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788959522081,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788959522081,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788959522081,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788959522081,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788959522081,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788959522081,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788959522081,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1788959539421,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1788959539665,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788959539665,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 405]"]}
+{"_e":"metro:client_log","_t":1788959539684,"level":"error","data":["Forgot password error:","{\"code\": undefined, \"message\": \"HTTP 405: \", \"status\": 405}","\n\n\u001b[1mCode: ForgotPasswordScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 58 |\u001b[39m       }\n \u001b[90m 59 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 60 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m\"Forgot password error:\"\u001b[39m\u001b[33m,\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 61 |\u001b[39m       setErrorMessage(error\u001b[33m.\u001b[39mmessage \u001b[33m||\u001b[39m \u001b[32m\"Failed to send reset code. Please try again.\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 62 |\u001b[39m     } \u001b[36mfinally\u001b[39m {\n \u001b[90m 63 |\u001b[39m       setIsSubmitting(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  handleSendResetCode (\u001b]8;;src/components/ForgotPasswordScreen.tsx:60:15\u0007src/components/ForgotPasswordScreen.tsx:60:15\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1788959678966,"id":"1b","platform":"web","environment":null,"entry":"src/components/ForgotPasswordScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1788959870709,"id":"1d","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788959870711,"id":"1d","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788959870794,"id":"1d","total":1,"ms":83.330875}
+{"_e":"metro:bundling:started","_t":1788959870913,"id":"1f","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788959871018,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788959871018,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788959871018,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788959871018,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788959871018,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788959871018,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788959871018,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1788959872771,"id":"1i","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788959872771,"id":"1i","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788959872813,"id":"1i","total":1,"ms":41.854208}
+{"_e":"metro:bundling:started","_t":1788959872923,"id":"1k","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788959873064,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788959873064,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788959873064,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788959873064,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788959873064,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788959873064,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788959873064,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1788959977171,"id":"1m","platform":"web","environment":null,"entry":"src/components/ForgotPasswordScreen.tsx"}
+{"_e":"metro:client_log","_t":1788959977577,"level":"warn","data":["An error occurred in the <ForgotPasswordScreen> component.\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://react.dev/link/error-boundaries to learn more about error boundaries.\n"]}
+{"_e":"metro:client_log","_t":1788959977589,"level":"error","data":["[ReferenceError: resetCode is not defined]","\n\n\u001b[1mCode: ForgotPasswordScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 94 |\u001b[39m             placeholder\u001b[33m=\u001b[39m\u001b[32m\"Enter your reset code\"\u001b[39m\n \u001b[90m 95 |\u001b[39m             placeholderTextColor\u001b[33m=\u001b[39m{colors\u001b[33m.\u001b[39mtextTertiary}\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 96 |\u001b[39m             value\u001b[33m=\u001b[39m{resetCode}\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 97 |\u001b[39m             onChangeText\u001b[33m=\u001b[39m{setResetCode}\n \u001b[90m 98 |\u001b[39m             autoCapitalize\u001b[33m=\u001b[39m\u001b[32m\"none\"\u001b[39m\n \u001b[90m 99 |\u001b[39m           \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  ForgotPasswordScreen (\u001b]8;;src/components/ForgotPasswordScreen.tsx:96:20\u0007src/components/ForgotPasswordScreen.tsx:96:20\u001b]8;;\u0007)\u001b[39m","\n\n\u001b[1mCode: App.tsx\u001b[22m\n\u001b[0m \u001b[90m 56 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"/login\"\u001b[39m element\u001b[33m=\u001b[39m{\u001b[33m<\u001b[39m\u001b[33mWelcomeScreen\u001b[39m \u001b[35m/>} /\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 57 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"/create-account\"\u001b[39m element\u001b[33m=\u001b[39m{\u001b[33m<\u001b[39m\u001b[33mCreateAccountScreen\u001b[39m \u001b[35m/>} /\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 58 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"/forgot-password\"\u001b[39m element\u001b[33m=\u001b[39m{\u001b[33m<\u001b[39m\u001b[33mForgotPasswordScreen\u001b[39m \u001b[35m/>} /\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m    |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 59 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"/home\"\u001b[39m element\u001b[33m=\u001b[39m{\u001b[33m<\u001b[39m\u001b[33mHomeScreen\u001b[39m \u001b[35m/>} /\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 60 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"/join-room\"\u001b[39m element\u001b[33m=\u001b[39m{\u001b[33m<\u001b[39m\u001b[33mJoinRoom\u001b[39m \u001b[35m/>} /\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 61 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"/room/:roomId\"\u001b[39m element\u001b[33m=\u001b[39m{\u001b[33m<\u001b[39m\u001b[33mRoom\u001b[39m \u001b[35m/>} /\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  App (\u001b]8;;App.tsx:58:51\u0007App.tsx:58:51\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1788959983942,"id":"1p","platform":"web","environment":null,"entry":"src/components/ForgotPasswordScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1788960003593,"id":"1s","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788960003594,"id":"1s","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788960003598,"id":"1s","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788960003697,"id":"1s","total":1,"ms":103.684834}
+{"_e":"metro:client_log","_t":1788960005097,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788960005098,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788960005098,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788960005098,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788960005100,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:client_log","_t":1788960127905,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788960128166,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788960156440,"level":"log","data":["Create Room pressed"]}
+{"_e":"metro:client_log","_t":1788960207072,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788960207073,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 401]"]}
+{"_e":"metro:client_log","_t":1788960207079,"level":"error","data":["Login error:","{\"code\": undefined, \"message\": \"HTTP 401: undefined\", \"status\": 401}"]}
+{"_e":"metro:client_log","_t":1788960207089,"level":"log","data":["Error type:","object"]}
+{"_e":"metro:client_log","_t":1788960207089,"level":"log","data":["Error details:","{\n  \"message\": \"HTTP 401: undefined\",\n  \"status\": 401\n}"]}
+{"_e":"metro:client_log","_t":1788960207090,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788960208998,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788960209002,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 401]"]}
+{"_e":"metro:client_log","_t":1788960209002,"level":"error","data":["Login error:","{\"code\": undefined, \"message\": \"HTTP 401: undefined\", \"status\": 401}"]}
+{"_e":"metro:client_log","_t":1788960209002,"level":"log","data":["Error type:","object"]}
+{"_e":"metro:client_log","_t":1788960209003,"level":"log","data":["Error details:","{\n  \"message\": \"HTTP 401: undefined\",\n  \"status\": 401\n}"]}
+{"_e":"metro:client_log","_t":1788960209003,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788960214512,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788960221810,"level":"log","data":["Create Room pressed"]}
+{"_e":"metro:bundling:started","_t":1788960411311,"id":"1x","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788960411311,"id":"1x","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788960411352,"id":"1x","total":1,"ms":40.559708}
+{"_e":"metro:bundling:started","_t":1788960411470,"id":"1z","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788960411588,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788960411588,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788960411588,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788960411589,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788960411589,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788960411589,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788960411589,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1788960464208,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1788960464378,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788960464378,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 400]"]}
+{"_e":"metro:client_log","_t":1788960464406,"level":"error","data":["Reset password error:","{\"code\": undefined, \"message\": \"HTTP 400: \", \"status\": 400}","\n\n\u001b[1mCode: ForgotPasswordScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 57 |\u001b[39m       }\n \u001b[90m 58 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 59 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m\"Reset password error:\"\u001b[39m\u001b[33m,\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 60 |\u001b[39m       setErrorMessage(error\u001b[33m.\u001b[39mmessage \u001b[33m||\u001b[39m \u001b[32m\"Failed to reset password. Please try again.\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 61 |\u001b[39m     } \u001b[36mfinally\u001b[39m {\n \u001b[90m 62 |\u001b[39m       setIsSubmitting(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  handleResetPassword (\u001b]8;;src/components/ForgotPasswordScreen.tsx:59:15\u0007src/components/ForgotPasswordScreen.tsx:59:15\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1788960530862,"id":"22","platform":"web","environment":null,"entry":"src/api/auth.ts"}
+{"_e":"metro:client_log","_t":1788960636243,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788960636245,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 400]"]}
+{"_e":"metro:client_log","_t":1788960636288,"level":"error","data":["Reset password error:","{\"code\": undefined, \"message\": \"HTTP 400: \", \"status\": 400}","\n\n\u001b[1mCode: ForgotPasswordScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 57 |\u001b[39m       }\n \u001b[90m 58 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 59 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m\"Reset password error:\"\u001b[39m\u001b[33m,\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 60 |\u001b[39m       setErrorMessage(error\u001b[33m.\u001b[39mmessage \u001b[33m||\u001b[39m \u001b[32m\"Failed to reset password. Please try again.\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 61 |\u001b[39m     } \u001b[36mfinally\u001b[39m {\n \u001b[90m 62 |\u001b[39m       setIsSubmitting(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  handleResetPassword (\u001b]8;;src/components/ForgotPasswordScreen.tsx:59:15\u0007src/components/ForgotPasswordScreen.tsx:59:15\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1788960696472,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788961511429,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788961511431,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 405]"]}
+{"_e":"metro:client_log","_t":1788961511454,"level":"error","data":["Registration error:","{\"code\": undefined, \"message\": \"HTTP 405: \", \"status\": 405}","\n\n\u001b[1mCode: CreateAccountScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 61 |\u001b[39m       }\n \u001b[90m 62 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 63 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m\"Registration error:\"\u001b[39m\u001b[33m,\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mif\u001b[39m (error\u001b[33m.\u001b[39mstatus \u001b[33m===\u001b[39m \u001b[35m409\u001b[39m) {\n \u001b[90m 65 |\u001b[39m         setErrorMessage(error\u001b[33m.\u001b[39mmessage \u001b[33m||\u001b[39m \u001b[32m\"An account with this email already exists\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m       } \u001b[36melse\u001b[39m {\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  handleCreateAccount (\u001b]8;;src/components/CreateAccountScreen.tsx:63:15\u0007src/components/CreateAccountScreen.tsx:63:15\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1788961546764,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788961546765,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 405]"]}
+{"_e":"metro:client_log","_t":1788961546780,"level":"error","data":["Registration error:","{\"code\": undefined, \"message\": \"HTTP 405: \", \"status\": 405}","\n\n\u001b[1mCode: CreateAccountScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 61 |\u001b[39m       }\n \u001b[90m 62 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 63 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m\"Registration error:\"\u001b[39m\u001b[33m,\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mif\u001b[39m (error\u001b[33m.\u001b[39mstatus \u001b[33m===\u001b[39m \u001b[35m409\u001b[39m) {\n \u001b[90m 65 |\u001b[39m         setErrorMessage(error\u001b[33m.\u001b[39mmessage \u001b[33m||\u001b[39m \u001b[32m\"An account with this email already exists\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m       } \u001b[36melse\u001b[39m {\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  handleCreateAccount (\u001b]8;;src/components/CreateAccountScreen.tsx:63:15\u0007src/components/CreateAccountScreen.tsx:63:15\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1788961620007,"id":"27","platform":"web","environment":null,"entry":"src/api/auth.ts"}
+{"_e":"metro:client_log","_t":1788961639660,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788961789890,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788961789894,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 409]"]}
+{"_e":"metro:client_log","_t":1788961789931,"level":"error","data":["Registration error:","{\"code\": undefined, \"message\": \"HTTP 409: \", \"status\": 409}","\n\n\u001b[1mCode: CreateAccountScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 61 |\u001b[39m       }\n \u001b[90m 62 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 63 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m\"Registration error:\"\u001b[39m\u001b[33m,\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mif\u001b[39m (error\u001b[33m.\u001b[39mstatus \u001b[33m===\u001b[39m \u001b[35m409\u001b[39m) {\n \u001b[90m 65 |\u001b[39m         setErrorMessage(error\u001b[33m.\u001b[39mmessage \u001b[33m||\u001b[39m \u001b[32m\"An account with this email already exists\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m       } \u001b[36melse\u001b[39m {\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  handleCreateAccount (\u001b]8;;src/components/CreateAccountScreen.tsx:63:15\u0007src/components/CreateAccountScreen.tsx:63:15\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1788961982292,"id":"2a","platform":"web","environment":null,"entry":"src/services/api.ts"}
+{"_e":"metro:client_log","_t":1788962081418,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788962081419,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 409]"]}
+{"_e":"metro:client_log","_t":1788962081446,"level":"error","data":["Registration error:","{\"code\": undefined, \"message\": \"User already exists\", \"status\": 409}","\n\n\u001b[1mCode: CreateAccountScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 61 |\u001b[39m       }\n \u001b[90m 62 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 63 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m\"Registration error:\"\u001b[39m\u001b[33m,\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mif\u001b[39m (error\u001b[33m.\u001b[39mstatus \u001b[33m===\u001b[39m \u001b[35m409\u001b[39m) {\n \u001b[90m 65 |\u001b[39m         setErrorMessage(error\u001b[33m.\u001b[39mmessage \u001b[33m||\u001b[39m \u001b[32m\"An account with this email already exists\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m       } \u001b[36melse\u001b[39m {\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  handleCreateAccount (\u001b]8;;src/components/CreateAccountScreen.tsx:63:15\u0007src/components/CreateAccountScreen.tsx:63:15\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1788962094246,"id":"2d","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788962094246,"id":"2d","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788962094312,"id":"2d","total":1,"ms":65.704125}
+{"_e":"metro:bundling:started","_t":1788962094426,"id":"2f","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788962094530,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788962094530,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788962094530,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788962094530,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788962094530,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788962094530,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788962094530,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1788962111682,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1788962112845,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788962112845,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 409]"]}
+{"_e":"metro:client_log","_t":1788962112856,"level":"error","data":["Registration error:","{\"code\": undefined, \"message\": \"User already exists\", \"status\": 409}","\n\n\u001b[1mCode: CreateAccountScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 61 |\u001b[39m       }\n \u001b[90m 62 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 63 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m\"Registration error:\"\u001b[39m\u001b[33m,\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mif\u001b[39m (error\u001b[33m.\u001b[39mstatus \u001b[33m===\u001b[39m \u001b[35m409\u001b[39m) {\n \u001b[90m 65 |\u001b[39m         setErrorMessage(error\u001b[33m.\u001b[39mmessage \u001b[33m||\u001b[39m \u001b[32m\"An account with this email already exists\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 66 |\u001b[39m       } \u001b[36melse\u001b[39m {\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  handleCreateAccount (\u001b]8;;src/components/CreateAccountScreen.tsx:63:15\u0007src/components/CreateAccountScreen.tsx:63:15\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1788962122368,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1788962122369,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 401]"]}
+{"_e":"metro:client_log","_t":1788962122370,"level":"log","data":["Error type:","object"]}
+{"_e":"metro:client_log","_t":1788962122370,"level":"log","data":["Error details:","{\n  \"message\": \"Invalid credentials\",\n  \"status\": 401\n}"]}
+{"_e":"metro:client_log","_t":1788962122370,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788962122383,"level":"error","data":["Login error:","{\"code\": undefined, \"message\": \"Invalid credentials\", \"status\": 401}","\n\n\u001b[1mCode: LoginScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 59 |\u001b[39m       }\n \u001b[90m 60 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 61 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m\"Login error:\"\u001b[39m\u001b[33m,\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 62 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m\"Error type:\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36mtypeof\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m 63 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m\"Error details:\"\u001b[39m\u001b[33m,\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(error\u001b[33m,\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m,\u001b[39m \u001b[35m2\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[36mif\u001b[39m (error\u001b[33m.\u001b[39mstatus \u001b[33m===\u001b[39m \u001b[35m401\u001b[39m) {\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  handleSignIn (\u001b]8;;src/components/LoginScreen.tsx:61:15\u0007src/components/LoginScreen.tsx:61:15\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1788962128325,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788962168741,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1788962174539,"level":"log","data":["Create Room pressed"]}
+{"_e":"metro:bundling:started","_t":1788962184116,"id":"2j","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788962184116,"id":"2j","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788962184148,"id":"2j","total":1,"ms":32.496167}
+{"_e":"metro:bundling:started","_t":1788962184251,"id":"2l","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788962184355,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788962184355,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788962184355,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788962184355,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788962184355,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788962184356,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788962184356,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1788962187251,"id":"2p","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788962187251,"id":"2p","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788962187282,"id":"2p","total":1,"ms":31.007125}
+{"_e":"metro:bundling:started","_t":1788962187377,"id":"2q","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788962187449,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788962187449,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788962187449,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788962187449,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788962187449,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788962187449,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788962187449,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1788962210113,"id":"2u","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788962210114,"id":"2u","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788962210163,"id":"2u","total":1,"ms":50.275917}
+{"_e":"metro:bundling:started","_t":1788962210271,"id":"2v","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788962210373,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788962210373,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788962210373,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788962210373,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788962210373,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788962210373,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788962210373,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:server_log","_t":1788962493630,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","host.exp.exponent","sdk_gphone16k_arm64 - 17 - API 37","60"]}
+{"_e":"metro:server_log","_t":1788962628768,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","host.exp.exponent","sdk_gphone16k_arm64 - 17 - API 37","60"]}
+{"_e":"root:init","_t":1788977211525,"format":"v0-jsonl","version":"57.0.21"}
+{"_e":"env:mode","_t":1788977211554,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1788977211555,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1788977211842,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1788977212203,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1788977212343,"plugins":[]}
+{"_e":"metro:instantiate","_t":1788977212601,"atlas":false,"workers":7,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1788977216993,"id":"5","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788977216993,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788977216997,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788977217096,"id":"5","progress":0.31433485622144586,"total":305,"current":171}
+{"_e":"metro:bundling:progress","_t":1788977217196,"id":"5","progress":0.31433485622144586,"total":2166,"current":835}
+{"_e":"metro:bundling:progress","_t":1788977217296,"id":"5","progress":0.9222482152076767,"total":2370,"current":2276}
+{"_e":"metro:bundling:done","_t":1788977217363,"id":"5","total":2370,"ms":369.566541}
+{"_e":"metro:client_log","_t":1788977224930,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788977224933,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788977224934,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788977224934,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788977225764,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:client_log","_t":1788977258893,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"root:init","_t":1788977669985,"format":"v0-jsonl","version":"57.0.21"}
+{"_e":"env:mode","_t":1788977669985,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1788977669986,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1788977670104,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1788977670367,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1788977670452,"plugins":[]}
+{"_e":"metro:instantiate","_t":1788977670681,"atlas":false,"workers":7,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1788977672612,"id":"1","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788977672613,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788977672619,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1788977672719,"id":"1","progress":0.016870128154313647,"total":870,"current":113}
+{"_e":"metro:bundling:progress","_t":1788977672822,"id":"1","progress":0.05901592609851703,"total":1910,"current":464}
+{"_e":"metro:bundling:done","_t":1788977672924,"id":"1","total":1910,"ms":311.69775}
+{"_e":"metro:bundling:started","_t":1788977673044,"id":"3","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788977673147,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788977673147,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788977673147,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788977673147,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788977673147,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788977673147,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788977673147,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1788977685583,"id":"7","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1788977685583,"id":"7","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1788977685612,"id":"7","total":1,"ms":29.034125}
+{"_e":"metro:bundling:started","_t":1788977685703,"id":"9","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1788977685804,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1788977685804,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1788977685805,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1788977685805,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1788977685805,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1788977685805,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1788977685805,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"root:init","_t":1788978258967,"format":"v0-jsonl","version":"57.0.21"}
+{"_e":"env:mode","_t":1788978258967,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1788978258968,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1788978259096,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1788978259423,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1788978259568,"plugins":[]}
+{"_e":"metro:instantiate","_t":1788978259848,"atlas":false,"workers":7,"host":"::","port":8081}

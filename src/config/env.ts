@@ -1,7 +1,6 @@
 // Environment configuration
 export const ENV = {
-  API_BASE_URL:
-    process.env.EXPO_PUBLIC_API_BASE_URL || "http://localhost:3000/api/v1", // Changed from placeholder to localhost for development
+  API_BASE_URL: "https://stormy-uncomplemental-amina.ngrok-free.dev/api",
   NODE_ENV: process.env.NODE_ENV || "development",
   APP_NAME: process.env.EXPO_PUBLIC_APP_NAME || "SQUARDS",
   APP_VERSION: process.env.EXPO_PUBLIC_APP_VERSION || "1.0.0",

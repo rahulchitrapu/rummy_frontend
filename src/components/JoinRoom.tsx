@@ -1,7 +1,5 @@
 import React, { useState, useRef } from "react";
-import { RootStackParamList } from "../types/navigation";
-import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useNavigate } from "@/router";
 import {
   ScrollView,
   Text,
@@ -23,8 +21,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ArrowRight } from "lucide-react-native";
 
 const JoinRoom = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const navigate = useNavigate();
   const insets = useSafeAreaInsets();
 
   // State for the 4-digit room code
@@ -73,7 +70,7 @@ const JoinRoom = () => {
     setTimeout(() => {
       if (code === "0000") {
         // Navigate to room with the code as roomId
-        navigation.navigate("Room", { roomId: code, roomCode: code });
+        navigate(`/room/${code}`, { state: { roomCode: code } });
       } else {
         Alert.alert(
           "Invalid Room Code",

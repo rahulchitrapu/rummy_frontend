@@ -102,6 +102,7 @@ class ApiService {
         throw {
           message:
             error.response.data?.message ||
+            error.response.data?.error_msg ||
             `HTTP ${error.response.status}: ${error.response.statusText}`,
           status: error.response.status,
           code: error.response.data?.code,

@@ -45,7 +45,7 @@ export const authAPI = {
   register: async (
     userData: RegisterRequest,
   ): Promise<ApiResponse<LoginResponse>> => {
-    return api.post<LoginResponse>("/users/register", userData);
+    return api.post<LoginResponse>("/users/", userData);
   },
 
   /**
@@ -84,9 +84,9 @@ export const authAPI = {
    * Reset password
    */
   resetPassword: async (
-    token: string,
+    email: string,
     newPassword: string,
   ): Promise<ApiResponse<{ message: string }>> => {
-    return api.post("/users/reset-password", { token, password: newPassword });
+    return api.post("/users/reset-password", { email, password: newPassword });
   },
 };

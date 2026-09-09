@@ -1,34 +1,26 @@
-import "./global.css";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// import "./global.css";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useEffect, useState } from "react";
 
+import { Router, Routes, Route, Navigate } from "@/router";
+
 import WelcomeScreen from "@/components/LoginScreen";
+import CreateAccountScreen from "@/components/CreateAccountScreen";
+import ForgotPasswordScreen from "@/components/ForgotPasswordScreen";
 import HomeScreen from "@/components/HomeScreen";
 import JoinRoom from "@/components/JoinRoom";
 import Room from "@/components/Room";
 import Lobby from "@/components/Lobby";
 
-import { RootStackParamList } from "@/types/navigation";
 import { CrossPlatformStorage } from "@/utils/storage";
+import { useAndroidBackHandler } from "@/hooks/useAndroidBackHandler";
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
-
-const linking = {
-  prefixes: ["http://localhost:8081", "https://yourapp.com"],
-  config: {
-    screens: {
-      Login: "/login",
-      Home: "/home",
-      JoinRoom: "/join-room",
-      Room: "/room/:roomId",
-      Lobby: "/lobby",
-    },
-  },
-  fallback: "/login" as const,
-};
+// Needs to render inside <Router> since the hook reads router location/nav.
+function AndroidBackHandler() {
+  useAndroidBackHandler();
+  return null;
+}
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
@@ -53,21 +45,25 @@ export default function App() {
     return null;
   }
 
+  const defaultRoute = isAuthenticated ? "/home" : "/login";
+
   return (
     <SafeAreaProvider>
-      <NavigationContainer linking={linking}>
-        <Stack.Navigator
-          initialRouteName={isAuthenticated ? "Home" : "Login"}
-          screenOptions={{ headerShown: false }}
-        >
-          <Stack.Screen name="Login" component={WelcomeScreen} />
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="JoinRoom" component={JoinRoom} />
-          <Stack.Screen name="Room" component={Room} />
-          <Stack.Screen name="Lobby" component={Lobby} />
-        </Stack.Navigator>
-        <StatusBar style="auto" />
-      </NavigationContainer>
+      <Router>
+        <AndroidBackHandler />
+        <Routes>
+          <Route path="/" element={<Navigate to={defaultRoute} replace />} />
+          <Route path="/login" element={<WelcomeScreen />} />
+          <Route path="/create-account" element={<CreateAccountScreen />} />
+          <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
+          <Route path="/home" element={<HomeScreen />} />
+          <Route path="/join-room" element={<JoinRoom />} />
+          <Route path="/room/:roomId" element={<Room />} />
+          <Route path="/lobby" element={<Lobby />} />
+          <Route path="*" element={<Navigate to={defaultRoute} replace />} />
+        </Routes>
+      </Router>
+      <StatusBar style="auto" />
     </SafeAreaProvider>
   );
 }

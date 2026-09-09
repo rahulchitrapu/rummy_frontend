@@ -6,68 +6,61 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
-  Platform,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigate } from "@/router";
 import { Eye, EyeOff } from "lucide-react-native";
-import { CrossPlatformStorage } from "../utils/storage";
 import { authAPI } from "../api/auth";
-import {
-  commonStyles,
-  colors,
-  typography,
-  spacing,
-  borderRadius,
-  shadows,
-} from "@/styles/theme";
+import { commonStyles, colors, typography, spacing } from "@/styles/theme";
 
 /**
- * LoginScreen component
- * Displays login form with email and password
+ * ForgotPasswordScreen component
+ *
+ * Single-step form: enter your email + a new password and call
+ * authAPI.resetPassword directly. There's no OTP/token step yet — that flow
+ * (authAPI.forgotPassword) is being built separately.
  */
-const WelcomeScreen = () => {
+const ForgotPasswordScreen = () => {
   const insets = useSafeAreaInsets();
   const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSignIn = async () => {
-    // Clear any previous error message
+  const handleResetPassword = async () => {
     setErrorMessage("");
 
+    if (!email || !newPassword) {
+      setErrorMessage("Please enter your email and a new password");
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      setErrorMessage("Passwords do not match");
+      return;
+    }
+
+    setIsSubmitting(true);
+
     try {
-      // Call the auth API with the credentials
-      const response = await authAPI.login({
-        email: email,
-        password: password,
-      });
+      const response = await authAPI.resetPassword(email, newPassword);
 
       if (response.success) {
-        const userId = response.data.user.id.toString();
-
-        // Store user ID in secure storage
-        await CrossPlatformStorage.setItem("accountId", userId);
-
-        // Navigate to home page with account ID parameter
-        navigate("/home", { state: { accountId: userId } });
+        // Password reset — send the user back to sign in with the new one.
+        navigate("/login");
       } else {
-        console.log("Login failed with response:", response);
-        setErrorMessage("Login failed. Please try again.");
+        setErrorMessage("Failed to reset password. Please try again.");
       }
     } catch (error: { status: number; message: string } | any) {
-      console.error("Login error:", error);
-      console.log("Error type:", typeof error);
-      console.log("Error details:", JSON.stringify(error, null, 2));
-      if (error.status === 401) {
-        setErrorMessage(error.message || "Invalid credentials");
-      } else {
-        setErrorMessage("Login failed. Please try again.");
-      }
+      console.error("Reset password error:", error);
+      setErrorMessage(error.message || "Failed to reset password. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
-    console.log("=== LOGIN DEBUG END ===");
   };
 
   return (
@@ -81,24 +74,15 @@ const WelcomeScreen = () => {
           paddingLeft: insets.left,
           paddingRight: insets.right,
         },
-        // Ensure the scrollable area fills the viewport on web so vertical
-        // scrolling works as expected (react-native-web respects CSS units).
-        // Platform.OS === "web" ? { minHeight: "100vh" } : {},
       ]}
       contentContainerStyle={{ flexGrow: 1 }}
     >
       <View style={[styles.content, commonStyles.contentPadding]}>
-        {/* Flag Icon */}
-        <View style={styles.iconContainer}>
-          <Text style={styles.flagEmoji}>🏴</Text>
-        </View>
-
         {/* Title */}
         <View style={styles.titleContainer}>
-          <Text style={styles.welcomeText}>Welcome to</Text>
-          <Text style={styles.brandText}>SQARDS</Text>
+          <Text style={styles.brandText}>Reset Password</Text>
           <Text style={styles.subtitleText}>
-            Sign in to continue your journey
+            Enter your email and choose a new password
           </Text>
         </View>
 
@@ -116,16 +100,16 @@ const WelcomeScreen = () => {
           />
         </View>
 
-        {/* Password Field */}
+        {/* New Password Field */}
         <View style={commonStyles.fieldContainer}>
-          <Text style={commonStyles.fieldLabel}>Password</Text>
+          <Text style={commonStyles.fieldLabel}>New Password</Text>
           <View style={{ position: "relative" }}>
             <TextInput
               style={commonStyles.textInput}
-              placeholder="Enter your password"
+              placeholder="Enter a new password"
               placeholderTextColor={colors.textTertiary}
-              value={password}
-              onChangeText={setPassword}
+              value={newPassword}
+              onChangeText={setNewPassword}
               secureTextEntry={!showPassword}
             />
             <TouchableOpacity
@@ -146,31 +130,46 @@ const WelcomeScreen = () => {
           </View>
         </View>
 
-        {/* Sign In Button */}
+        {/* Confirm New Password Field */}
+        <View style={commonStyles.fieldContainer}>
+          <Text style={commonStyles.fieldLabel}>Confirm New Password</Text>
+          <TextInput
+            style={commonStyles.textInput}
+            placeholder="Re-enter your new password"
+            placeholderTextColor={colors.textTertiary}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
+            secureTextEntry={!showPassword}
+          />
+        </View>
+
         <TouchableOpacity
-          style={commonStyles.primaryButton}
-          onPress={handleSignIn}
+          style={[
+            commonStyles.primaryButton,
+            isSubmitting && styles.disabledButton,
+          ]}
+          onPress={handleResetPassword}
+          disabled={isSubmitting}
           activeOpacity={0.8}
         >
-          <Text style={commonStyles.primaryButtonText}>Sign In</Text>
+          <Text style={commonStyles.primaryButtonText}>
+            {isSubmitting ? "Resetting..." : "Reset Password"}
+          </Text>
         </TouchableOpacity>
 
         {/* Error Message */}
         {errorMessage ? (
           <View
-            style={[commonStyles.errorContainer, { marginBottom: spacing.lg }]}
+            style={[commonStyles.errorContainer, { marginTop: spacing.lg }]}
           >
             <Text style={commonStyles.errorText}>{errorMessage}</Text>
           </View>
         ) : null}
 
-        {/* Footer Links */}
+        {/* Footer Link */}
         <View style={styles.footerContainer}>
-          <TouchableOpacity onPress={() => navigate("/forgot-password")}>
-            <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigate("/create-account")}>
-            <Text style={styles.createAccountText}>Create Account</Text>
+          <TouchableOpacity onPress={() => navigate("/login")}>
+            <Text style={styles.signInText}>Back to Sign In</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -183,51 +182,35 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
   },
-  iconContainer: {
-    alignItems: "center",
-    marginBottom: spacing.xl,
-  },
-  flagEmoji: {
-    fontSize: 60,
-    marginBottom: 0,
-  },
   titleContainer: {
     alignItems: "center",
     marginBottom: spacing.xxxl,
   },
-  welcomeText: {
-    ...typography.h3,
-    color: colors.textSecondary,
-    marginBottom: spacing.sm,
-  },
   brandText: {
     ...typography.h1,
-    fontSize: 48,
+    fontSize: 32,
     fontWeight: "bold",
     color: colors.primary,
     marginBottom: spacing.md,
+    textAlign: "center",
   },
   subtitleText: {
     ...typography.bodyLarge,
     color: colors.textSecondary,
     textAlign: "center",
   },
+  disabledButton: {
+    opacity: 0.7,
+  },
   footerContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
     marginTop: spacing.xl,
   },
-  forgotPasswordText: {
+  signInText: {
     color: colors.primary,
-    fontSize: typography.bodyLarge.fontSize,
-    fontWeight: "500",
-  },
-  createAccountText: {
-    color: colors.textSecondary,
     fontSize: typography.bodyLarge.fontSize,
     fontWeight: "500",
   },
 });
 
-export default WelcomeScreen;
+export default ForgotPasswordScreen;

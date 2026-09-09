@@ -1,39 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import type { RootStackParamList } from "../types/navigation";
+import { useNavigate, useLocation } from "@/router";
 import { CrossPlatformStorage } from "../utils/storage";
-import { LogOut, Users, Plus } from "lucide-react-native";
+import {
+  LogOut,
+  Users,
+  Plus,
+  Crown,
+  Spade,
+  Heart,
+  Diamond,
+  Club,
+} from "lucide-react-native";
 import {
   commonStyles,
-  colors,
   typography,
   spacing,
   borderRadius,
   shadows,
+  cardTable,
 } from "../styles/theme";
 import { ROOM } from "@/api/room";
 
-type HomeScreenRouteProp = {
-  key: string;
-  name: "Home";
-  params: { accountId?: string } | undefined;
-};
+type HomeLocationState = { accountId?: string } | null;
 
 const HomeScreen = () => {
   const insets = useSafeAreaInsets();
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const route = useRoute<HomeScreenRouteProp>();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const routeAccountId = (location.state as HomeLocationState)?.accountId;
   const [accountId, setAccountId] = useState<string | null>(null);
 
   useEffect(() => {
-    // Get account ID from route params or storage
+    // Get account ID from route state or storage
     const getAccountId = async () => {
       try {
-        const routeAccountId = route.params?.accountId;
         if (routeAccountId) {
           setAccountId(routeAccountId);
         } else {
@@ -44,12 +47,12 @@ const HomeScreen = () => {
       } catch (error) {
         console.error("Failed to get account ID:", error);
         // If we can't get account ID, navigate back to login
-        navigation.navigate("Login");
+        navigate("/login");
       }
     };
 
     getAccountId();
-  }, [route.params]);
+  }, [routeAccountId]);
 
   const handleLogout = async () => {
     try {
@@ -57,7 +60,7 @@ const HomeScreen = () => {
         await CrossPlatformStorage.removeItem("accountId");
       }
 
-      navigation.navigate("Login");
+      navigate("/login");
     } catch (error) {
       console.error("Failed to logout:", error);
     }
@@ -66,143 +69,237 @@ const HomeScreen = () => {
   const createRoom = async () => {
     await ROOM.createRoom();
 
-    navigation.navigate("Lobby");
+    navigate("/lobby");
   };
 
   return (
-    <View
-      style={[
-        commonStyles.screenContainer,
-        commonStyles.centeredContainer,
-        {
-          paddingTop: insets.top,
-          paddingBottom: insets.bottom,
-          paddingLeft: insets.left,
-          paddingRight: insets.right,
-        },
-      ]}
+    <LinearGradient
+      colors={[cardTable.feltDark, cardTable.felt, cardTable.feltDark]}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={styles.gradient}
     >
-      {/* Header with logout button */}
-      <View style={commonStyles.headerContainer}>
-        <View style={commonStyles.headerContent}>
-          <Text style={commonStyles.headerTitle}>Welcome to SQUARDS</Text>
-          <TouchableOpacity
-            style={styles.logoutIconButton}
-            onPress={handleLogout}
-            activeOpacity={0.7}
-          >
-            <LogOut color={colors.error} size={24} />
-          </TouchableOpacity>
-        </View>
-        <Text style={commonStyles.headerSubtitle}>Choose your action</Text>
-      </View>
+      <View
+        style={[
+          commonStyles.centeredContainer,
+          commonStyles.contentPadding,
+          styles.safeArea,
+          {
+            paddingTop: insets.top + spacing.md,
+            paddingBottom: insets.bottom + spacing.md,
+            paddingLeft: insets.left,
+            paddingRight: insets.right,
+          },
+        ]}
+      >
+        {/* Header */}
+        <View>
+          <View style={styles.headerRow}>
+            <View style={styles.brandRow}>
+              <Crown color={cardTable.gold} size={24} />
+              <Text style={styles.brandTitle}>SQUARDS</Text>
+            </View>
+            <TouchableOpacity
+              style={styles.logoutButton}
+              onPress={handleLogout}
+              activeOpacity={0.7}
+            >
+              <LogOut color={cardTable.goldLight} size={20} />
+            </TouchableOpacity>
+          </View>
 
-      <View style={[styles.content, commonStyles.contentPadding]}>
+          <Text style={styles.subtitle}>Ready for your next hand?</Text>
+
+          {accountId ? (
+            <View style={styles.playerChip}>
+              <Text style={styles.playerChipText}>
+                Player #{accountId}
+              </Text>
+            </View>
+          ) : null}
+        </View>
+
         {/* Room Options */}
         <View style={styles.roomOptionsContainer}>
           {/* Join Room Option */}
           <TouchableOpacity
-            style={[styles.roomOptionButton, styles.joinRoomButton]}
-            activeOpacity={0.8}
-            onPress={() => {
-              // TODO: Navigate to join room screen
-              navigation.navigate("JoinRoom");
-            }}
+            style={styles.roomCard}
+            activeOpacity={0.85}
+            onPress={() => navigate("/join-room")}
           >
-            <View style={styles.roomOptionIconContainer}>
-              <Users color={colors.success} size={28} />
+            <View style={[styles.accentBar, { backgroundColor: cardTable.felt }]} />
+            <View
+              style={[
+                styles.roomOptionIconContainer,
+                { backgroundColor: `${cardTable.felt}1A` },
+              ]}
+            >
+              <Users color={cardTable.felt} size={26} />
             </View>
             <View style={styles.roomOptionTextContainer}>
               <Text style={styles.roomOptionTitle}>Join Room</Text>
               <Text style={styles.roomOptionDescription}>
-                Enter a room code to join an existing room
+                Enter a room code to join an existing table
               </Text>
+            </View>
+            <View style={[styles.suitBadge, { backgroundColor: `${cardTable.suitBlack}12` }]}>
+              <Spade color={cardTable.suitBlack} size={14} />
             </View>
           </TouchableOpacity>
 
           {/* Create Room Option */}
           <TouchableOpacity
-            style={[styles.roomOptionButton, styles.createRoomButton]}
-            activeOpacity={0.8}
+            style={styles.roomCard}
+            activeOpacity={0.85}
             onPress={() => {
-              // TODO: Navigate to create room screen
               createRoom();
-              console.log("Create Room pressed");
             }}
           >
-            <View style={styles.roomOptionIconContainer}>
-              <Plus color={colors.info} size={28} />
+            <View style={[styles.accentBar, { backgroundColor: cardTable.gold }]} />
+            <View
+              style={[
+                styles.roomOptionIconContainer,
+                { backgroundColor: `${cardTable.goldDark}1A` },
+              ]}
+            >
+              <Plus color={cardTable.goldDark} size={26} />
             </View>
             <View style={styles.roomOptionTextContainer}>
               <Text style={styles.roomOptionTitle}>Create Room</Text>
               <Text style={styles.roomOptionDescription}>
-                Start a new room and invite others to join
+                Start a new table and invite others to join
               </Text>
+            </View>
+            <View style={[styles.suitBadge, { backgroundColor: `${cardTable.suitRed}12` }]}>
+              <Diamond color={cardTable.suitRed} size={14} />
             </View>
           </TouchableOpacity>
         </View>
+
+        {/* Decorative suit row */}
+        <View style={styles.suitFooter}>
+          <Spade color={cardTable.textOnFeltMuted} size={16} />
+          <Heart color={cardTable.textOnFeltMuted} size={16} />
+          <Diamond color={cardTable.textOnFeltMuted} size={16} />
+          <Club color={cardTable.textOnFeltMuted} size={16} />
+        </View>
       </View>
-    </View>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
-  logoutIconButton: {
-    padding: spacing.sm,
-    borderRadius: borderRadius.md,
-    backgroundColor: colors.errorBackground,
-    borderWidth: 1,
-    borderColor: colors.errorBorder,
-  },
-  content: {
+  gradient: {
     flex: 1,
-    paddingTop: spacing.xxl,
-    justifyContent: "flex-start",
+  },
+  safeArea: {
+    flex: 1,
+    justifyContent: "space-between",
+  },
+  headerRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  brandRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+  },
+  brandTitle: {
+    ...typography.h2,
+    color: cardTable.textOnFelt,
+    letterSpacing: 2,
+  },
+  logoutButton: {
+    width: 40,
+    height: 40,
+    borderRadius: borderRadius.full,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(255,255,255,0.08)",
+    borderWidth: 1,
+    borderColor: `${cardTable.goldDark}66`,
+  },
+  subtitle: {
+    ...typography.body,
+    color: cardTable.textOnFeltMuted,
+    marginTop: spacing.xs,
+  },
+  playerChip: {
+    alignSelf: "flex-start",
+    marginTop: spacing.md,
+    paddingHorizontal: spacing.md,
+    paddingVertical: 6,
+    borderRadius: borderRadius.full,
+    backgroundColor: "rgba(255,255,255,0.08)",
+    borderWidth: 1,
+    borderColor: `${cardTable.goldDark}66`,
+  },
+  playerChipText: {
+    ...typography.caption,
+    color: cardTable.goldLight,
+    fontWeight: "600",
   },
   roomOptionsContainer: {
     gap: spacing.lg,
   },
-  roomOptionButton: {
-    backgroundColor: colors.surface,
+  roomCard: {
+    backgroundColor: cardTable.cardFace,
     borderRadius: borderRadius.xl,
     paddingVertical: spacing.lg,
     paddingHorizontal: spacing.lg,
-    borderWidth: 2,
+    paddingLeft: spacing.lg + 6,
     flexDirection: "row",
     alignItems: "center",
+    overflow: "hidden",
     ...shadows.lg,
   },
-  joinRoomButton: {
-    borderColor: colors.successBorder,
-    backgroundColor: colors.successBackground,
-  },
-  createRoomButton: {
-    borderColor: colors.infoBorder,
-    backgroundColor: colors.infoBackground,
+  accentBar: {
+    position: "absolute",
+    left: 0,
+    top: 0,
+    bottom: 0,
+    width: 6,
   },
   roomOptionIconContainer: {
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    backgroundColor: colors.surface,
+    width: 52,
+    height: 52,
+    borderRadius: 26,
     justifyContent: "center",
     alignItems: "center",
     marginRight: spacing.md,
-    ...shadows.sm,
   },
   roomOptionTextContainer: {
     flex: 1,
+    paddingRight: spacing.md,
   },
   roomOptionTitle: {
     ...typography.h4,
-    color: colors.textPrimary,
-    marginBottom: 6,
+    color: cardTable.suitBlack,
+    marginBottom: 4,
   },
   roomOptionDescription: {
     ...typography.body,
-    fontSize: 15,
-    color: colors.textSecondary,
-    lineHeight: 22,
+    fontSize: 14,
+    color: "#4B5563",
+    lineHeight: 20,
+  },
+  suitBadge: {
+    position: "absolute",
+    top: 12,
+    right: 12,
+    width: 26,
+    height: 26,
+    borderRadius: 13,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  suitFooter: {
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: spacing.lg,
+    opacity: 0.6,
   },
 });
 

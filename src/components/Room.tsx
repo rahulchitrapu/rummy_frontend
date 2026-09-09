@@ -7,9 +7,7 @@ import {
   FlatList,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import type { RootStackParamList } from "../types/navigation";
+import { useNavigate, useParams, useLocation } from "@/router";
 import {
   commonStyles,
   colors,
@@ -27,19 +25,14 @@ interface Player {
   isReady: boolean;
 }
 
-type RoomScreenRouteProp = {
-  key: string;
-  name: "Room";
-  params: { roomId: string; roomCode?: string } | undefined;
-};
+type RoomLocationState = { roomCode?: string } | null;
 
 const Room = () => {
   const insets = useSafeAreaInsets();
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  const route = useRoute<RoomScreenRouteProp>();
-
-  const { roomId, roomCode } = route.params || {};
+  const navigate = useNavigate();
+  const { roomId } = useParams<{ roomId: string }>();
+  const location = useLocation();
+  const roomCode = (location.state as RoomLocationState)?.roomCode;
 
   // Mock current user ID - in real app, this would come from auth context
   const currentUserId = "user1";
@@ -60,7 +53,7 @@ const Room = () => {
   const canStartGame = isRoomCreator && players.length >= 2 && allPlayersReady;
 
   const handleGoBack = () => {
-    navigation.goBack();
+    navigate(-1);
   };
 
   const handleStartGame = () => {

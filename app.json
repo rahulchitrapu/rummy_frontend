@@ -30,6 +30,10 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro",
       "output": "single"
-    }
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-status-bar"
+    ]
   }
 }

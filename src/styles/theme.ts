@@ -44,6 +44,32 @@ export const colors = {
   borderDark: "#CBD5E1",
 };
 
+// Card-table theme — a felt-and-gold palette for screens that should feel
+// like sitting down at a rummy table (Home, Lobby, Room), layered on top of
+// the neutral `colors` above rather than replacing it.
+export const cardTable = {
+  // Felt green, darkest to lightest — used for gradient backgrounds
+  feltDark: "#062F22",
+  felt: "#0B6E4F",
+  feltLight: "#14895F",
+
+  // Casino gold — primary accent for CTAs, borders, and the wordmark
+  gold: "#F0B429",
+  goldLight: "#FCD34D",
+  goldDark: "#B8860B",
+
+  // Card face — ivory rather than pure white, reads as a physical card
+  cardFace: "#FFFDF6",
+
+  // Suit accents for iconography
+  suitRed: "#DC2626",
+  suitBlack: "#1F2937",
+
+  // Text/ink on felt
+  textOnFelt: "#FFFDF6",
+  textOnFeltMuted: "#CFE8DA",
+};
+
 // Typography
 export const typography = {
   h1: {
