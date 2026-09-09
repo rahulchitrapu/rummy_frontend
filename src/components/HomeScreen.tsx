@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ActivityIndicator,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigate, useLocation } from "@/router";
@@ -13,13 +19,13 @@ import {
   Heart,
   Diamond,
   Club,
+  ChevronRight,
 } from "lucide-react-native";
 import {
   commonStyles,
   typography,
   spacing,
   borderRadius,
-  shadows,
   cardTable,
 } from "../styles/theme";
 import { ROOM } from "@/api/room";
@@ -32,6 +38,8 @@ const HomeScreen = () => {
   const location = useLocation();
   const routeAccountId = (location.state as HomeLocationState)?.accountId;
   const [accountId, setAccountId] = useState<string | null>(null);
+  const [isCreatingRoom, setIsCreatingRoom] = useState(false);
+  const [createRoomError, setCreateRoomError] = useState("");
 
   useEffect(() => {
     // Get account ID from route state or storage
@@ -67,9 +75,24 @@ const HomeScreen = () => {
   };
 
   const createRoom = async () => {
-    await ROOM.createRoom();
+    // Guard against double-taps/re-entrant calls firing off multiple
+    // "create room" requests while the first one is still in flight.
+    if (isCreatingRoom) return;
 
-    navigate("/lobby");
+    setCreateRoomError("");
+    setIsCreatingRoom(true);
+
+    try {
+      await ROOM.createRoom();
+      navigate("/lobby");
+    } catch (error: { status: number; message: string } | any) {
+      console.error("Failed to create room:", error);
+      setCreateRoomError(
+        error?.message || "Failed to create room. Please try again.",
+      );
+    } finally {
+      setIsCreatingRoom(false);
+    }
   };
 
   return (
@@ -82,13 +105,16 @@ const HomeScreen = () => {
       <View
         style={[
           commonStyles.centeredContainer,
-          commonStyles.contentPadding,
           styles.safeArea,
           {
             paddingTop: insets.top + spacing.md,
             paddingBottom: insets.bottom + spacing.md,
-            paddingLeft: insets.left,
-            paddingRight: insets.right,
+            // Add to the insets rather than replacing contentPadding's
+            // paddingHorizontal — a longhand paddingLeft/Right here would
+            // otherwise win over the shorthand and, on most phones where
+            // insets.left/right are 0, zero out the side padding entirely.
+            paddingLeft: insets.left + spacing.lg,
+            paddingRight: insets.right + spacing.lg,
           },
         ]}
       >
@@ -120,60 +146,110 @@ const HomeScreen = () => {
         </View>
 
         {/* Room Options */}
-        <View style={styles.roomOptionsContainer}>
-          {/* Join Room Option */}
-          <TouchableOpacity
-            style={styles.roomCard}
-            activeOpacity={0.85}
-            onPress={() => navigate("/join-room")}
-          >
-            <View style={[styles.accentBar, { backgroundColor: cardTable.felt }]} />
-            <View
-              style={[
-                styles.roomOptionIconContainer,
-                { backgroundColor: `${cardTable.felt}1A` },
-              ]}
+        <View style={styles.middleContent}>
+          <View style={styles.roomOptionsContainer}>
+            {/* Join Room Option */}
+            <TouchableOpacity
+              style={[styles.roomCard, isCreatingRoom && styles.roomCardDisabled]}
+              activeOpacity={0.85}
+              onPress={() => navigate("/join-room")}
+              disabled={isCreatingRoom}
             >
-              <Users color={cardTable.felt} size={26} />
-            </View>
-            <View style={styles.roomOptionTextContainer}>
-              <Text style={styles.roomOptionTitle}>Join Room</Text>
-              <Text style={styles.roomOptionDescription}>
-                Enter a room code to join an existing table
-              </Text>
-            </View>
-            <View style={[styles.suitBadge, { backgroundColor: `${cardTable.suitBlack}12` }]}>
-              <Spade color={cardTable.suitBlack} size={14} />
-            </View>
-          </TouchableOpacity>
+              <LinearGradient
+                colors={["#FFFFFF", cardTable.cardFace, `${cardTable.felt}0D`]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={StyleSheet.absoluteFill}
+              />
+              <View style={styles.accentBar} />
+              <View
+                style={[
+                  styles.roomOptionIconContainer,
+                  {
+                    backgroundColor: `${cardTable.felt}1A`,
+                    borderColor: `${cardTable.felt}33`,
+                  },
+                ]}
+              >
+                <Users color={cardTable.felt} size={26} />
+              </View>
+              <View style={styles.roomOptionTextContainer}>
+                <Text style={[styles.roomOptionEyebrow, { color: cardTable.felt }]}>
+                  MULTIPLAYER
+                </Text>
+                <Text style={styles.roomOptionTitle}>Join Room</Text>
+                <Text style={styles.roomOptionDescription}>
+                  Enter a room code to join an existing table
+                </Text>
+              </View>
+              <ChevronRight color="#9CA3AF" size={20} />
+              <View
+                style={[
+                  styles.suitBadge,
+                  { backgroundColor: `${cardTable.suitBlack}12` },
+                ]}
+              >
+                <Spade color={cardTable.suitBlack} size={14} />
+              </View>
+            </TouchableOpacity>
 
-          {/* Create Room Option */}
-          <TouchableOpacity
-            style={styles.roomCard}
-            activeOpacity={0.85}
-            onPress={() => {
-              createRoom();
-            }}
-          >
-            <View style={[styles.accentBar, { backgroundColor: cardTable.gold }]} />
-            <View
-              style={[
-                styles.roomOptionIconContainer,
-                { backgroundColor: `${cardTable.goldDark}1A` },
-              ]}
+            {/* Create Room Option */}
+            <TouchableOpacity
+              style={[styles.roomCard, isCreatingRoom && styles.roomCardDisabled]}
+              activeOpacity={0.85}
+              onPress={createRoom}
+              disabled={isCreatingRoom}
             >
-              <Plus color={cardTable.goldDark} size={26} />
-            </View>
-            <View style={styles.roomOptionTextContainer}>
-              <Text style={styles.roomOptionTitle}>Create Room</Text>
-              <Text style={styles.roomOptionDescription}>
-                Start a new table and invite others to join
-              </Text>
-            </View>
-            <View style={[styles.suitBadge, { backgroundColor: `${cardTable.suitRed}12` }]}>
-              <Diamond color={cardTable.suitRed} size={14} />
-            </View>
-          </TouchableOpacity>
+              <LinearGradient
+                colors={["#FFFFFF", cardTable.cardFace, `${cardTable.gold}12`]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={StyleSheet.absoluteFill}
+              />
+              <View style={styles.accentBar} />
+              <View
+                style={[
+                  styles.roomOptionIconContainer,
+                  {
+                    backgroundColor: `${cardTable.goldDark}1A`,
+                    borderColor: `${cardTable.goldDark}33`,
+                  },
+                ]}
+              >
+                {isCreatingRoom ? (
+                  <ActivityIndicator color={cardTable.goldDark} />
+                ) : (
+                  <Plus color={cardTable.goldDark} size={26} />
+                )}
+              </View>
+              <View style={styles.roomOptionTextContainer}>
+                <Text style={[styles.roomOptionEyebrow, { color: cardTable.goldDark }]}>
+                  HOST A TABLE
+                </Text>
+                <Text style={styles.roomOptionTitle}>Create Room</Text>
+                <Text style={styles.roomOptionDescription}>
+                  {isCreatingRoom
+                    ? "Setting up your table…"
+                    : "Start a new table and invite others to join"}
+                </Text>
+              </View>
+              {!isCreatingRoom && <ChevronRight color="#9CA3AF" size={20} />}
+              <View
+                style={[
+                  styles.suitBadge,
+                  { backgroundColor: `${cardTable.suitRed}12` },
+                ]}
+              >
+                <Diamond color={cardTable.suitRed} size={14} />
+              </View>
+            </TouchableOpacity>
+
+            {createRoomError ? (
+              <View style={styles.errorBanner}>
+                <Text style={styles.errorBannerText}>{createRoomError}</Text>
+              </View>
+            ) : null}
+          </View>
         </View>
 
         {/* Decorative suit row */}
@@ -194,7 +270,10 @@ const styles = StyleSheet.create({
   },
   safeArea: {
     flex: 1,
-    justifyContent: "space-between",
+  },
+  middleContent: {
+    flex: 1,
+    justifyContent: "center",
   },
   headerRow: {
     flexDirection: "row",
@@ -253,7 +332,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     overflow: "hidden",
-    ...shadows.lg,
+    borderWidth: 1,
+    borderColor: "rgba(0,0,0,0.04)",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.18,
+    shadowRadius: 14,
+    elevation: 6,
+  },
+  roomCardDisabled: {
+    opacity: 0.85,
   },
   accentBar: {
     position: "absolute",
@@ -261,18 +349,27 @@ const styles = StyleSheet.create({
     top: 0,
     bottom: 0,
     width: 6,
+    backgroundColor: cardTable.gold,
   },
   roomOptionIconContainer: {
-    width: 52,
-    height: 52,
-    borderRadius: 26,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
     justifyContent: "center",
     alignItems: "center",
     marginRight: spacing.md,
+    borderWidth: 2,
   },
   roomOptionTextContainer: {
     flex: 1,
-    paddingRight: spacing.md,
+    paddingRight: spacing.sm,
+  },
+  roomOptionEyebrow: {
+    ...typography.caption,
+    fontSize: 11,
+    fontWeight: "700",
+    letterSpacing: 0.8,
+    marginBottom: 2,
   },
   roomOptionTitle: {
     ...typography.h4,
@@ -300,6 +397,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: spacing.lg,
     opacity: 0.6,
+    marginTop: spacing.xl,
+  },
+  errorBanner: {
+    marginTop: spacing.md,
+    backgroundColor: "rgba(220,38,38,0.16)",
+    borderWidth: 1,
+    borderColor: "rgba(220,38,38,0.4)",
+    borderRadius: borderRadius.md,
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
+  },
+  errorBannerText: {
+    ...typography.body,
+    fontSize: 14,
+    color: "#FCA5A5",
+    textAlign: "center",
+    fontWeight: "500",
   },
 });
 

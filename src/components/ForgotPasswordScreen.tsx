@@ -6,12 +6,22 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
+  ActivityIndicator,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigate } from "@/router";
-import { Eye, EyeOff } from "lucide-react-native";
+import { Eye, EyeOff, Crown, Spade, Heart, Diamond, Club } from "lucide-react-native";
 import { authAPI } from "../api/auth";
-import { commonStyles, colors, typography, spacing } from "@/styles/theme";
+import {
+  commonStyles,
+  colors,
+  typography,
+  spacing,
+  borderRadius,
+  shadows,
+  cardTable,
+} from "@/styles/theme";
 
 /**
  * ForgotPasswordScreen component
@@ -32,6 +42,8 @@ const ForgotPasswordScreen = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleResetPassword = async () => {
+    if (isSubmitting) return;
+
     setErrorMessage("");
 
     if (!email || !newPassword) {
@@ -64,152 +76,210 @@ const ForgotPasswordScreen = () => {
   };
 
   return (
-    <ScrollView
-      style={[
-        commonStyles.screenContainerPurple,
-        commonStyles.centeredContainer,
-        {
-          paddingTop: insets.top,
-          paddingBottom: insets.bottom,
-          paddingLeft: insets.left,
-          paddingRight: insets.right,
-        },
-      ]}
-      contentContainerStyle={{ flexGrow: 1 }}
+    <LinearGradient
+      colors={[cardTable.feltDark, cardTable.felt, cardTable.feltDark]}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={styles.gradient}
     >
-      <View style={[styles.content, commonStyles.contentPadding]}>
-        {/* Title */}
-        <View style={styles.titleContainer}>
-          <Text style={styles.brandText}>Reset Password</Text>
-          <Text style={styles.subtitleText}>
-            Enter your email and choose a new password
-          </Text>
-        </View>
+      <ScrollView
+        style={[
+          commonStyles.centeredContainer,
+          {
+            paddingTop: insets.top + spacing.md,
+            paddingBottom: insets.bottom + spacing.md,
+            // Add to the insets rather than replacing contentPadding's
+            // paddingHorizontal — a longhand paddingLeft/Right here would
+            // otherwise win over the shorthand and zero out side padding.
+            paddingLeft: insets.left + spacing.lg,
+            paddingRight: insets.right + spacing.lg,
+          },
+        ]}
+        contentContainerStyle={{ flexGrow: 1 }}
+      >
+        <View style={styles.content}>
+          {/* Brand */}
+          <View style={styles.brandContainer}>
+            <View style={styles.brandRow}>
+              <Crown color={cardTable.gold} size={26} />
+              <Text style={styles.brandTitle}>SQUARDS</Text>
+            </View>
+            <Text style={styles.brandSubtitle}>
+              Enter your email and choose a new password
+            </Text>
+          </View>
 
-        {/* Email Field */}
-        <View style={commonStyles.fieldContainer}>
-          <Text style={commonStyles.fieldLabel}>Email Address</Text>
-          <TextInput
-            style={commonStyles.textInput}
-            placeholder="Enter your email address"
-            placeholderTextColor={colors.textTertiary}
-            value={email}
-            onChangeText={setEmail}
-            keyboardType="email-address"
-            autoCapitalize="none"
-          />
-        </View>
+          {/* Form card */}
+          <View style={styles.card}>
+            {/* Email Field */}
+            <View style={commonStyles.fieldContainer}>
+              <Text style={commonStyles.fieldLabel}>Email Address</Text>
+              <TextInput
+                style={commonStyles.textInput}
+                placeholder="Enter your email address"
+                placeholderTextColor={colors.textTertiary}
+                value={email}
+                onChangeText={setEmail}
+                keyboardType="email-address"
+                autoCapitalize="none"
+              />
+            </View>
 
-        {/* New Password Field */}
-        <View style={commonStyles.fieldContainer}>
-          <Text style={commonStyles.fieldLabel}>New Password</Text>
-          <View style={{ position: "relative" }}>
-            <TextInput
-              style={commonStyles.textInput}
-              placeholder="Enter a new password"
-              placeholderTextColor={colors.textTertiary}
-              value={newPassword}
-              onChangeText={setNewPassword}
-              secureTextEntry={!showPassword}
-            />
+            {/* New Password Field */}
+            <View style={commonStyles.fieldContainer}>
+              <Text style={commonStyles.fieldLabel}>New Password</Text>
+              <View style={{ position: "relative" }}>
+                <TextInput
+                  style={commonStyles.textInput}
+                  placeholder="Enter a new password"
+                  placeholderTextColor={colors.textTertiary}
+                  value={newPassword}
+                  onChangeText={setNewPassword}
+                  secureTextEntry={!showPassword}
+                />
+                <TouchableOpacity
+                  style={{
+                    position: "absolute",
+                    right: 12,
+                    top: "50%",
+                    transform: [{ translateY: -12 }],
+                  }}
+                  onPress={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <EyeOff size={20} color={colors.textSecondary} />
+                  ) : (
+                    <Eye size={20} color={colors.textSecondary} />
+                  )}
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            {/* Confirm New Password Field */}
+            <View style={commonStyles.fieldContainer}>
+              <Text style={commonStyles.fieldLabel}>Confirm New Password</Text>
+              <TextInput
+                style={commonStyles.textInput}
+                placeholder="Re-enter your new password"
+                placeholderTextColor={colors.textTertiary}
+                value={confirmPassword}
+                onChangeText={setConfirmPassword}
+                secureTextEntry={!showPassword}
+              />
+            </View>
+
             <TouchableOpacity
-              style={{
-                position: "absolute",
-                right: 12,
-                top: "50%",
-                transform: [{ translateY: -12 }],
-              }}
-              onPress={() => setShowPassword(!showPassword)}
+              style={[styles.submitButton, isSubmitting && styles.submitButtonDisabled]}
+              onPress={handleResetPassword}
+              disabled={isSubmitting}
+              activeOpacity={0.85}
             >
-              {showPassword ? (
-                <EyeOff size={20} color={colors.textSecondary} />
+              {isSubmitting ? (
+                <ActivityIndicator color={cardTable.feltDark} />
               ) : (
-                <Eye size={20} color={colors.textSecondary} />
+                <Text style={styles.submitButtonText}>Reset Password</Text>
               )}
             </TouchableOpacity>
+
+            {/* Error Message */}
+            {errorMessage ? (
+              <View
+                style={[commonStyles.errorContainer, { marginTop: spacing.lg }]}
+              >
+                <Text style={commonStyles.errorText}>{errorMessage}</Text>
+              </View>
+            ) : null}
+          </View>
+
+          {/* Footer Link */}
+          <View style={styles.footerContainer}>
+            <TouchableOpacity onPress={() => navigate("/login")}>
+              <Text style={styles.signInText}>Back to Sign In</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* Decorative suit row */}
+          <View style={styles.suitRow}>
+            <Spade color={cardTable.textOnFeltMuted} size={16} />
+            <Heart color={cardTable.textOnFeltMuted} size={16} />
+            <Diamond color={cardTable.textOnFeltMuted} size={16} />
+            <Club color={cardTable.textOnFeltMuted} size={16} />
           </View>
         </View>
-
-        {/* Confirm New Password Field */}
-        <View style={commonStyles.fieldContainer}>
-          <Text style={commonStyles.fieldLabel}>Confirm New Password</Text>
-          <TextInput
-            style={commonStyles.textInput}
-            placeholder="Re-enter your new password"
-            placeholderTextColor={colors.textTertiary}
-            value={confirmPassword}
-            onChangeText={setConfirmPassword}
-            secureTextEntry={!showPassword}
-          />
-        </View>
-
-        <TouchableOpacity
-          style={[
-            commonStyles.primaryButton,
-            isSubmitting && styles.disabledButton,
-          ]}
-          onPress={handleResetPassword}
-          disabled={isSubmitting}
-          activeOpacity={0.8}
-        >
-          <Text style={commonStyles.primaryButtonText}>
-            {isSubmitting ? "Resetting..." : "Reset Password"}
-          </Text>
-        </TouchableOpacity>
-
-        {/* Error Message */}
-        {errorMessage ? (
-          <View
-            style={[commonStyles.errorContainer, { marginTop: spacing.lg }]}
-          >
-            <Text style={commonStyles.errorText}>{errorMessage}</Text>
-          </View>
-        ) : null}
-
-        {/* Footer Link */}
-        <View style={styles.footerContainer}>
-          <TouchableOpacity onPress={() => navigate("/login")}>
-            <Text style={styles.signInText}>Back to Sign In</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1,
+  },
   content: {
     flex: 1,
     justifyContent: "center",
   },
-  titleContainer: {
+  brandContainer: {
     alignItems: "center",
-    marginBottom: spacing.xxxl,
+    marginBottom: spacing.xxl,
   },
-  brandText: {
+  brandRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+  },
+  brandTitle: {
     ...typography.h1,
     fontSize: 32,
-    fontWeight: "bold",
-    color: colors.primary,
-    marginBottom: spacing.md,
+    color: cardTable.textOnFelt,
+    letterSpacing: 2,
+  },
+  brandSubtitle: {
+    ...typography.body,
+    color: cardTable.textOnFeltMuted,
+    marginTop: spacing.sm,
     textAlign: "center",
   },
-  subtitleText: {
-    ...typography.bodyLarge,
-    color: colors.textSecondary,
-    textAlign: "center",
+  card: {
+    backgroundColor: cardTable.cardFace,
+    borderRadius: borderRadius.xl,
+    padding: spacing.lg,
+    borderWidth: 1,
+    borderColor: `${cardTable.goldDark}40`,
+    ...shadows.lg,
   },
-  disabledButton: {
+  submitButton: {
+    backgroundColor: cardTable.gold,
+    borderRadius: borderRadius.lg,
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.lg,
+    alignItems: "center",
+    justifyContent: "center",
+    ...shadows.sm,
+  },
+  submitButtonDisabled: {
     opacity: 0.7,
+  },
+  submitButtonText: {
+    color: cardTable.feltDark,
+    fontSize: typography.button.fontSize,
+    fontWeight: typography.button.fontWeight,
   },
   footerContainer: {
     alignItems: "center",
     marginTop: spacing.xl,
   },
   signInText: {
-    color: colors.primary,
+    color: cardTable.goldLight,
     fontSize: typography.bodyLarge.fontSize,
     fontWeight: "500",
+  },
+  suitRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: spacing.lg,
+    opacity: 0.6,
+    marginTop: spacing.xxl,
   },
 });
 

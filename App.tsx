@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Router, Routes, Route, Navigate } from "@/router";
 
-import WelcomeScreen from "@/components/LoginScreen";
+import LoginScreen from "@/components/LoginScreen";
 import CreateAccountScreen from "@/components/CreateAccountScreen";
 import ForgotPasswordScreen from "@/components/ForgotPasswordScreen";
 import HomeScreen from "@/components/HomeScreen";
@@ -53,7 +53,7 @@ export default function App() {
         <AndroidBackHandler />
         <Routes>
           <Route path="/" element={<Navigate to={defaultRoute} replace />} />
-          <Route path="/login" element={<WelcomeScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
           <Route path="/create-account" element={<CreateAccountScreen />} />
           <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
           <Route path="/home" element={<HomeScreen />} />

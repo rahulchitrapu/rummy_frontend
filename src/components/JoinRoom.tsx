@@ -9,16 +9,17 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import {
   commonStyles,
-  colors,
   spacing,
   borderRadius,
   shadows,
   typography,
+  cardTable,
 } from "../styles/theme";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { ArrowRight } from "lucide-react-native";
+import { ArrowLeft, ArrowRight, Spade, Heart, Diamond, Club } from "lucide-react-native";
 
 const JoinRoom = () => {
   const navigate = useNavigate();
@@ -82,152 +83,202 @@ const JoinRoom = () => {
   };
 
   return (
-    <ScrollView
-      style={[
-        commonStyles.screenContainer,
-        commonStyles.centeredContainer,
-        {
-          paddingTop: insets.top,
-          paddingBottom: insets.bottom,
-          paddingLeft: insets.left,
-          paddingRight: insets.right,
-        },
-      ]}
-      contentContainerStyle={{ flexGrow: 1 }}
+    <LinearGradient
+      colors={[cardTable.feltDark, cardTable.felt, cardTable.feltDark]}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={styles.gradient}
     >
-      <View style={[styles.content, commonStyles.contentPadding]}>
-        {/* Header */}
-        <View style={styles.headerContainer}>
-          <Text style={styles.title}>Join Room</Text>
-          <Text style={styles.subtitle}>
-            Enter the 4-digit room code to join
-          </Text>
-        </View>
+      <ScrollView
+        style={[
+          commonStyles.centeredContainer,
+          {
+            paddingTop: insets.top + spacing.md,
+            paddingBottom: insets.bottom + spacing.md,
+            // Add to the insets rather than replacing contentPadding's
+            // paddingHorizontal — a longhand paddingLeft/Right here would
+            // otherwise win over the shorthand and zero out side padding.
+            paddingLeft: insets.left + spacing.lg,
+            paddingRight: insets.right + spacing.lg,
+          },
+        ]}
+        contentContainerStyle={{ flexGrow: 1 }}
+      >
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => navigate(-1)}
+          activeOpacity={0.7}
+        >
+          <ArrowLeft color={cardTable.goldLight} size={20} />
+        </TouchableOpacity>
 
-        {/* Room Code Input */}
-        <View style={styles.codeContainer}>
-          <Text style={styles.codeLabel}>Room Code</Text>
-          <View style={styles.inputContainer}>
-            {roomCode.map((digit, index) => (
-              <TextInput
-                key={index}
-                ref={(ref) => (inputRefs.current[index] = ref)}
-                style={[
-                  styles.codeInput,
-                  digit !== "" && styles.codeInputFilled,
-                ]}
-                value={digit}
-                onChangeText={(text) => handleInputChange(text, index)}
-                onKeyPress={({ nativeEvent }) =>
-                  handleKeyPress(nativeEvent.key, index)
-                }
-                keyboardType="numeric"
-                maxLength={1}
-                textAlign="center"
-                selectTextOnFocus
-                autoFocus={index === 0}
-              />
-            ))}
+        <View style={styles.content}>
+          {/* Header */}
+          <View style={styles.headerContainer}>
+            <Spade color={cardTable.gold} size={28} />
+            <Text style={styles.title}>Join Room</Text>
+            <Text style={styles.subtitle}>
+              Enter the 4-digit room code to join
+            </Text>
+          </View>
+
+          {/* Room Code Card */}
+          <View style={styles.card}>
+            <Text style={styles.codeLabel}>Room Code</Text>
+            <View style={styles.inputContainer}>
+              {roomCode.map((digit, index) => (
+                <TextInput
+                  key={index}
+                  ref={(ref) => (inputRefs.current[index] = ref)}
+                  style={[
+                    styles.codeInput,
+                    digit !== "" && styles.codeInputFilled,
+                  ]}
+                  value={digit}
+                  onChangeText={(text) => handleInputChange(text, index)}
+                  onKeyPress={({ nativeEvent }) =>
+                    handleKeyPress(nativeEvent.key, index)
+                  }
+                  keyboardType="numeric"
+                  maxLength={1}
+                  textAlign="center"
+                  selectTextOnFocus
+                  autoFocus={index === 0}
+                />
+              ))}
+            </View>
+
+            {/* Join Button */}
+            <TouchableOpacity
+              style={[
+                styles.joinButton,
+                roomCode.join("").length !== 4 && styles.disabledButton,
+              ]}
+              onPress={handleJoinRoom}
+              disabled={roomCode.join("").length !== 4 || isJoining}
+              activeOpacity={0.85}
+            >
+              <View style={styles.buttonContent}>
+                <Text
+                  style={[
+                    styles.joinButtonText,
+                    roomCode.join("").length !== 4 && styles.disabledButtonText,
+                  ]}
+                >
+                  {isJoining ? "Joining..." : "Join Room"}
+                </Text>
+                <ArrowRight
+                  color={
+                    roomCode.join("").length !== 4
+                      ? cardTable.suitBlack
+                      : cardTable.feltDark
+                  }
+                  size={20}
+                  style={{ marginLeft: spacing.sm }}
+                />
+              </View>
+            </TouchableOpacity>
+          </View>
+
+          {/* Decorative suit row */}
+          <View style={styles.suitRow}>
+            <Spade color={cardTable.textOnFeltMuted} size={16} />
+            <Heart color={cardTable.textOnFeltMuted} size={16} />
+            <Diamond color={cardTable.textOnFeltMuted} size={16} />
+            <Club color={cardTable.textOnFeltMuted} size={16} />
           </View>
         </View>
-
-        {/* Join Button */}
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={[
-              commonStyles.primaryButton,
-              styles.joinButton,
-              roomCode.join("").length !== 4 && styles.disabledButton,
-            ]}
-            onPress={handleJoinRoom}
-            disabled={roomCode.join("").length !== 4 || isJoining}
-            activeOpacity={0.8}
-          >
-            <View style={styles.buttonContent}>
-              <Text
-                style={[
-                  commonStyles.primaryButtonText,
-                  roomCode.join("").length !== 4 && styles.disabledButtonText,
-                ]}
-              >
-                {isJoining ? "Joining..." : "Join Room"}
-              </Text>
-              <ArrowRight
-                color={
-                  roomCode.join("").length !== 4
-                    ? colors.textDisabled
-                    : colors.surface
-                }
-                size={20}
-                style={{ marginLeft: spacing.sm }}
-              />
-            </View>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1,
+  },
+  backButton: {
+    width: 40,
+    height: 40,
+    borderRadius: borderRadius.full,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(255,255,255,0.08)",
+    borderWidth: 1,
+    borderColor: `${cardTable.goldDark}66`,
+  },
   content: {
     flex: 1,
     justifyContent: "center",
   },
   headerContainer: {
     alignItems: "center",
-    marginBottom: spacing.xxxl,
+    marginBottom: spacing.xxl,
   },
   title: {
     ...typography.h1,
-    color: colors.textPrimary,
+    fontSize: 30,
+    color: cardTable.textOnFelt,
+    marginTop: spacing.sm,
     marginBottom: spacing.sm,
     textAlign: "center",
   },
   subtitle: {
     ...typography.bodyLarge,
-    color: colors.textSecondary,
+    color: cardTable.textOnFeltMuted,
     textAlign: "center",
     lineHeight: 24,
   },
-  codeContainer: {
-    marginBottom: spacing.xxxl,
+  card: {
+    backgroundColor: cardTable.cardFace,
+    borderRadius: borderRadius.xl,
+    padding: spacing.lg,
+    borderWidth: 1,
+    borderColor: `${cardTable.goldDark}40`,
+    ...shadows.lg,
   },
   codeLabel: {
     ...typography.h4,
-    color: colors.textPrimary,
+    color: cardTable.suitBlack,
     textAlign: "center",
     marginBottom: spacing.lg,
   },
   inputContainer: {
     flexDirection: "row",
     gap: spacing.sm,
-    paddingHorizontal: spacing.lg,
     justifyContent: "center",
+    marginBottom: spacing.lg,
   },
   codeInput: {
-    width: 60,
-    height: 60,
-    backgroundColor: colors.surface,
+    width: 56,
+    height: 56,
+    backgroundColor: "#FFFFFF",
     borderRadius: borderRadius.lg,
     borderWidth: 2,
-    borderColor: colors.border,
-    fontSize: 24,
+    borderColor: "#E2E8F0",
+    fontSize: 22,
     fontWeight: "600",
-    color: colors.textPrimary,
-    paddingHorizontal: 16,
+    color: cardTable.suitBlack,
+    paddingHorizontal: 12,
     ...shadows.sm,
   },
   codeInputFilled: {
-    borderColor: colors.primary,
-    backgroundColor: colors.infoBackground,
+    borderColor: cardTable.gold,
+    backgroundColor: `${cardTable.gold}14`,
     textAlign: "center",
   },
-  buttonContainer: {
-    paddingHorizontal: spacing.lg,
-  },
   joinButton: {
-    paddingVertical: spacing.lg,
+    backgroundColor: cardTable.gold,
+    borderRadius: borderRadius.lg,
+    paddingVertical: spacing.md,
+    alignItems: "center",
+    justifyContent: "center",
+    ...shadows.sm,
+  },
+  joinButtonText: {
+    color: cardTable.feltDark,
+    fontSize: typography.button.fontSize,
+    fontWeight: typography.button.fontWeight,
   },
   buttonContent: {
     flexDirection: "row",
@@ -235,10 +286,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   disabledButton: {
-    backgroundColor: colors.borderDark,
+    backgroundColor: "#E2E8F0",
   },
   disabledButtonText: {
-    color: colors.textWhite,
+    color: cardTable.suitBlack,
+  },
+  suitRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: spacing.lg,
+    marginTop: spacing.xxl,
+    opacity: 0.6,
   },
 });
 

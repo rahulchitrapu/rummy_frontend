@@ -6,11 +6,12 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
-  Platform,
+  ActivityIndicator,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigate } from "@/router";
-import { Eye, EyeOff } from "lucide-react-native";
+import { Eye, EyeOff, Crown, Spade, Heart, Diamond, Club } from "lucide-react-native";
 import { CrossPlatformStorage } from "../utils/storage";
 import { authAPI } from "../api/auth";
 import {
@@ -20,23 +21,29 @@ import {
   spacing,
   borderRadius,
   shadows,
+  cardTable,
 } from "@/styles/theme";
 
 /**
  * LoginScreen component
- * Displays login form with email and password
+ * Displays the sign-in form on a felt-and-gold card-table background,
+ * matching HomeScreen's theme.
  */
-const WelcomeScreen = () => {
+const LoginScreen = () => {
   const insets = useSafeAreaInsets();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSignIn = async () => {
+    if (isSubmitting) return;
+
     // Clear any previous error message
     setErrorMessage("");
+    setIsSubmitting(true);
 
     try {
       // Call the auth API with the credentials
@@ -66,151 +73,196 @@ const WelcomeScreen = () => {
       } else {
         setErrorMessage("Login failed. Please try again.");
       }
+    } finally {
+      setIsSubmitting(false);
     }
     console.log("=== LOGIN DEBUG END ===");
   };
 
   return (
-    <ScrollView
-      style={[
-        commonStyles.screenContainerPurple,
-        commonStyles.centeredContainer,
-        {
-          paddingTop: insets.top,
-          paddingBottom: insets.bottom,
-          paddingLeft: insets.left,
-          paddingRight: insets.right,
-        },
-        // Ensure the scrollable area fills the viewport on web so vertical
-        // scrolling works as expected (react-native-web respects CSS units).
-        // Platform.OS === "web" ? { minHeight: "100vh" } : {},
-      ]}
-      contentContainerStyle={{ flexGrow: 1 }}
+    <LinearGradient
+      colors={[cardTable.feltDark, cardTable.felt, cardTable.feltDark]}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={styles.gradient}
     >
-      <View style={[styles.content, commonStyles.contentPadding]}>
-        {/* Flag Icon */}
-        <View style={styles.iconContainer}>
-          <Text style={styles.flagEmoji}>🏴</Text>
-        </View>
+      <ScrollView
+        style={[
+          commonStyles.centeredContainer,
+          {
+            paddingTop: insets.top + spacing.md,
+            paddingBottom: insets.bottom + spacing.md,
+            // Add to the insets rather than replacing contentPadding's
+            // paddingHorizontal — a longhand paddingLeft/Right here would
+            // otherwise win over the shorthand and, on most phones where
+            // insets.left/right are 0, zero out the side padding entirely.
+            paddingLeft: insets.left + spacing.lg,
+            paddingRight: insets.right + spacing.lg,
+          },
+        ]}
+        contentContainerStyle={{ flexGrow: 1 }}
+      >
+        <View style={styles.content}>
+          {/* Brand */}
+          <View style={styles.brandContainer}>
+            <View style={styles.brandRow}>
+              <Crown color={cardTable.gold} size={28} />
+              <Text style={styles.brandTitle}>SQUARDS</Text>
+            </View>
+            <Text style={styles.brandSubtitle}>
+              Sign in to take your seat at the table
+            </Text>
+          </View>
 
-        {/* Title */}
-        <View style={styles.titleContainer}>
-          <Text style={styles.welcomeText}>Welcome to</Text>
-          <Text style={styles.brandText}>SQARDS</Text>
-          <Text style={styles.subtitleText}>
-            Sign in to continue your journey
-          </Text>
-        </View>
+          {/* Form card */}
+          <View style={styles.card}>
+            {/* Email Field */}
+            <View style={commonStyles.fieldContainer}>
+              <Text style={commonStyles.fieldLabel}>Email Address</Text>
+              <TextInput
+                style={commonStyles.textInput}
+                placeholder="Enter your email address"
+                placeholderTextColor={colors.textTertiary}
+                value={email}
+                onChangeText={setEmail}
+                keyboardType="email-address"
+                autoCapitalize="none"
+              />
+            </View>
 
-        {/* Email Field */}
-        <View style={commonStyles.fieldContainer}>
-          <Text style={commonStyles.fieldLabel}>Email Address</Text>
-          <TextInput
-            style={commonStyles.textInput}
-            placeholder="Enter your email address"
-            placeholderTextColor={colors.textTertiary}
-            value={email}
-            onChangeText={setEmail}
-            keyboardType="email-address"
-            autoCapitalize="none"
-          />
-        </View>
+            {/* Password Field */}
+            <View style={commonStyles.fieldContainer}>
+              <Text style={commonStyles.fieldLabel}>Password</Text>
+              <View style={{ position: "relative" }}>
+                <TextInput
+                  style={commonStyles.textInput}
+                  placeholder="Enter your password"
+                  placeholderTextColor={colors.textTertiary}
+                  value={password}
+                  onChangeText={setPassword}
+                  secureTextEntry={!showPassword}
+                />
+                <TouchableOpacity
+                  style={{
+                    position: "absolute",
+                    right: 12,
+                    top: "50%",
+                    transform: [{ translateY: -12 }],
+                  }}
+                  onPress={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <EyeOff size={20} color={colors.textSecondary} />
+                  ) : (
+                    <Eye size={20} color={colors.textSecondary} />
+                  )}
+                </TouchableOpacity>
+              </View>
+            </View>
 
-        {/* Password Field */}
-        <View style={commonStyles.fieldContainer}>
-          <Text style={commonStyles.fieldLabel}>Password</Text>
-          <View style={{ position: "relative" }}>
-            <TextInput
-              style={commonStyles.textInput}
-              placeholder="Enter your password"
-              placeholderTextColor={colors.textTertiary}
-              value={password}
-              onChangeText={setPassword}
-              secureTextEntry={!showPassword}
-            />
+            {/* Sign In Button */}
             <TouchableOpacity
-              style={{
-                position: "absolute",
-                right: 12,
-                top: "50%",
-                transform: [{ translateY: -12 }],
-              }}
-              onPress={() => setShowPassword(!showPassword)}
+              style={[
+                styles.signInButton,
+                isSubmitting && styles.signInButtonDisabled,
+              ]}
+              onPress={handleSignIn}
+              disabled={isSubmitting}
+              activeOpacity={0.85}
             >
-              {showPassword ? (
-                <EyeOff size={20} color={colors.textSecondary} />
+              {isSubmitting ? (
+                <ActivityIndicator color={cardTable.feltDark} />
               ) : (
-                <Eye size={20} color={colors.textSecondary} />
+                <Text style={styles.signInButtonText}>Sign In</Text>
               )}
             </TouchableOpacity>
+
+            {/* Error Message */}
+            {errorMessage ? (
+              <View
+                style={[commonStyles.errorContainer, { marginTop: spacing.lg }]}
+              >
+                <Text style={commonStyles.errorText}>{errorMessage}</Text>
+              </View>
+            ) : null}
+          </View>
+
+          {/* Footer Links */}
+          <View style={styles.footerContainer}>
+            <TouchableOpacity onPress={() => navigate("/forgot-password")}>
+              <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigate("/create-account")}>
+              <Text style={styles.createAccountText}>Create Account</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* Decorative suit row */}
+          <View style={styles.suitRow}>
+            <Spade color={cardTable.textOnFeltMuted} size={16} />
+            <Heart color={cardTable.textOnFeltMuted} size={16} />
+            <Diamond color={cardTable.textOnFeltMuted} size={16} />
+            <Club color={cardTable.textOnFeltMuted} size={16} />
           </View>
         </View>
-
-        {/* Sign In Button */}
-        <TouchableOpacity
-          style={commonStyles.primaryButton}
-          onPress={handleSignIn}
-          activeOpacity={0.8}
-        >
-          <Text style={commonStyles.primaryButtonText}>Sign In</Text>
-        </TouchableOpacity>
-
-        {/* Error Message */}
-        {errorMessage ? (
-          <View
-            style={[commonStyles.errorContainer, { marginBottom: spacing.lg }]}
-          >
-            <Text style={commonStyles.errorText}>{errorMessage}</Text>
-          </View>
-        ) : null}
-
-        {/* Footer Links */}
-        <View style={styles.footerContainer}>
-          <TouchableOpacity onPress={() => navigate("/forgot-password")}>
-            <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigate("/create-account")}>
-            <Text style={styles.createAccountText}>Create Account</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1,
+  },
   content: {
     flex: 1,
     justifyContent: "center",
   },
-  iconContainer: {
+  brandContainer: {
     alignItems: "center",
-    marginBottom: spacing.xl,
+    marginBottom: spacing.xxl,
   },
-  flagEmoji: {
-    fontSize: 60,
-    marginBottom: 0,
-  },
-  titleContainer: {
+  brandRow: {
+    flexDirection: "row",
     alignItems: "center",
-    marginBottom: spacing.xxxl,
+    gap: spacing.sm,
   },
-  welcomeText: {
-    ...typography.h3,
-    color: colors.textSecondary,
-    marginBottom: spacing.sm,
-  },
-  brandText: {
+  brandTitle: {
     ...typography.h1,
-    fontSize: 48,
-    fontWeight: "bold",
-    color: colors.primary,
-    marginBottom: spacing.md,
+    fontSize: 36,
+    color: cardTable.textOnFelt,
+    letterSpacing: 2,
   },
-  subtitleText: {
-    ...typography.bodyLarge,
-    color: colors.textSecondary,
+  brandSubtitle: {
+    ...typography.body,
+    color: cardTable.textOnFeltMuted,
+    marginTop: spacing.sm,
     textAlign: "center",
+  },
+  card: {
+    backgroundColor: cardTable.cardFace,
+    borderRadius: borderRadius.xl,
+    padding: spacing.lg,
+    borderWidth: 1,
+    borderColor: `${cardTable.goldDark}40`,
+    ...shadows.lg,
+  },
+  signInButton: {
+    backgroundColor: cardTable.gold,
+    borderRadius: borderRadius.lg,
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.lg,
+    alignItems: "center",
+    justifyContent: "center",
+    ...shadows.sm,
+  },
+  signInButtonDisabled: {
+    opacity: 0.7,
+  },
+  signInButtonText: {
+    color: cardTable.feltDark,
+    fontSize: typography.button.fontSize,
+    fontWeight: typography.button.fontWeight,
   },
   footerContainer: {
     flexDirection: "row",
@@ -219,15 +271,22 @@ const styles = StyleSheet.create({
     marginTop: spacing.xl,
   },
   forgotPasswordText: {
-    color: colors.primary,
+    color: cardTable.goldLight,
     fontSize: typography.bodyLarge.fontSize,
     fontWeight: "500",
   },
   createAccountText: {
-    color: colors.textSecondary,
+    color: cardTable.textOnFeltMuted,
     fontSize: typography.bodyLarge.fontSize,
     fontWeight: "500",
   },
+  suitRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: spacing.lg,
+    opacity: 0.6,
+    marginTop: spacing.xxl,
+  },
 });
 
-export default WelcomeScreen;
+export default LoginScreen;

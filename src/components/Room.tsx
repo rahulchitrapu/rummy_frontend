@@ -6,15 +6,16 @@ import {
   StyleSheet,
   FlatList,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigate, useParams, useLocation } from "@/router";
 import {
   commonStyles,
-  colors,
   spacing,
   typography,
   borderRadius,
   shadows,
+  cardTable,
 } from "../styles/theme";
 import { ArrowLeft, Users, Play, Crown } from "lucide-react-native";
 
@@ -78,7 +79,7 @@ const Room = () => {
           </View>
           {item.isCreator && (
             <View style={styles.crownBadge}>
-              <Crown color={colors.warning} size={14} />
+              <Crown color={cardTable.goldDark} size={14} />
             </View>
           )}
         </View>
@@ -132,10 +133,8 @@ const Room = () => {
   // Helper function to get consistent avatar colors
   const getAvatarColor = (index: number) => {
     const avatarColors = [
-      colors.primary,
-      colors.success,
-      colors.warning,
-      colors.info,
+      cardTable.felt,
+      cardTable.goldDark,
       "#8B5CF6", // Purple
       "#EC4899", // Pink
     ];
@@ -143,140 +142,152 @@ const Room = () => {
   };
 
   return (
-    <View
-      style={[
-        commonStyles.screenContainer,
-        commonStyles.centeredContainer,
-        {
-          paddingTop: insets.top,
-          paddingBottom: insets.bottom,
-          paddingLeft: insets.left,
-          paddingRight: insets.right,
-        },
-      ]}
+    <LinearGradient
+      colors={[cardTable.feltDark, cardTable.felt, cardTable.feltDark]}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={styles.gradient}
     >
-      {/* Header */}
-      <View style={styles.header}>
-        <TouchableOpacity
-          style={styles.backButton}
-          onPress={handleGoBack}
-          activeOpacity={0.7}
-        >
-          <ArrowLeft color={colors.textSecondary} size={24} />
-        </TouchableOpacity>
-        <View style={styles.headerTitleContainer}>
-          <Text style={styles.headerTitle}>Rummy Room</Text>
-          <View style={styles.playerCountContainer}>
-            <Users color={colors.success} size={16} />
-            <Text style={styles.playerCount}>{players.length} Players</Text>
-          </View>
-        </View>
-        <View style={styles.placeholder} />
-      </View>
-
-      {/* Content */}
-      <View style={[styles.content, commonStyles.contentPadding]}>
-        {/* Players Section */}
-        <View style={styles.playersSection}>
-          <View style={styles.sectionHeader}>
-            <View style={styles.titleRow}>
-              <Users color={colors.primary} size={24} />
-              <Text style={styles.sectionTitle}>Players in Room</Text>
+      <View
+        style={[
+          commonStyles.centeredContainer,
+          {
+            paddingTop: insets.top + spacing.md,
+            paddingBottom: insets.bottom + spacing.md,
+            // Add to the insets rather than replacing paddingHorizontal — a
+            // longhand paddingLeft/Right here would otherwise win over the
+            // shorthand and zero out side padding.
+            paddingLeft: insets.left + spacing.lg,
+            paddingRight: insets.right + spacing.lg,
+          },
+        ]}
+      >
+        {/* Header */}
+        <View style={styles.header}>
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={handleGoBack}
+            activeOpacity={0.7}
+          >
+            <ArrowLeft color={cardTable.goldLight} size={20} />
+          </TouchableOpacity>
+          <View style={styles.headerTitleContainer}>
+            <Text style={styles.headerTitle}>Rummy Room</Text>
+            <View style={styles.playerCountContainer}>
+              <Users color={cardTable.goldLight} size={14} />
+              <Text style={styles.playerCount}>{players.length} Players</Text>
             </View>
-            <View
-              style={[
-                styles.statusBadge,
-                allPlayersReady && styles.allReadyBadge,
-              ]}
-            >
+          </View>
+          <View style={styles.placeholder} />
+        </View>
+
+        {/* Content */}
+        <View style={styles.content}>
+          {/* Players Section */}
+          <View style={styles.playersSection}>
+            <View style={styles.sectionHeader}>
+              <View style={styles.titleRow}>
+                <Users color={cardTable.gold} size={22} />
+                <Text style={styles.sectionTitle}>Players in Room</Text>
+              </View>
               <View
                 style={[
-                  styles.statusBadgeDot,
-                  allPlayersReady && styles.allReadyDot,
-                ]}
-              />
-              <Text
-                style={[
-                  styles.statusBadgeText,
-                  allPlayersReady && styles.allReadyText,
+                  styles.statusBadge,
+                  allPlayersReady && styles.allReadyBadge,
                 ]}
               >
-                {allPlayersReady
-                  ? "All Ready!"
-                  : `${players.filter((p) => p.isReady).length}/${players.length} Ready`}
-              </Text>
-            </View>
-          </View>
-
-          <FlatList
-            data={players}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item, index }) => renderPlayer({ item, index })}
-            style={styles.playersList}
-            showsVerticalScrollIndicator={false}
-            contentContainerStyle={styles.playersListContent}
-          />
-        </View>
-
-        {/* Start Game Button - Only visible to room creator */}
-        {isRoomCreator && (
-          <View style={styles.gameControlsSection}>
-            <TouchableOpacity
-              style={[
-                commonStyles.primaryButton,
-                styles.startGameButton,
-                !canStartGame && styles.disabledButton,
-              ]}
-              onPress={handleStartGame}
-              disabled={!canStartGame}
-              activeOpacity={0.8}
-            >
-              <View style={styles.buttonContent}>
-                <Play
-                  color={canStartGame ? colors.surface : colors.textWhite}
-                  size={20}
-                  style={styles.playIcon}
+                <View
+                  style={[
+                    styles.statusBadgeDot,
+                    allPlayersReady && styles.allReadyDot,
+                  ]}
                 />
                 <Text
                   style={[
-                    commonStyles.primaryButtonText,
-                    !canStartGame && styles.disabledButtonText,
+                    styles.statusBadgeText,
+                    allPlayersReady && styles.allReadyText,
                   ]}
                 >
-                  Start Rummy Game
+                  {allPlayersReady
+                    ? "All Ready!"
+                    : `${players.filter((p) => p.isReady).length}/${players.length} Ready`}
                 </Text>
               </View>
-            </TouchableOpacity>
+            </View>
 
-            {!canStartGame && (
-              <Text style={styles.requirementText}>
-                {players.length < 2
-                  ? "Need at least 2 players to start"
-                  : "All players must be ready to start"}
-              </Text>
-            )}
+            <FlatList
+              data={players}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item, index }) => renderPlayer({ item, index })}
+              style={styles.playersList}
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={styles.playersListContent}
+            />
           </View>
-        )}
+
+          {/* Start Game Button - Only visible to room creator */}
+          {isRoomCreator && (
+            <View style={styles.gameControlsSection}>
+              <TouchableOpacity
+                style={[
+                  styles.startGameButton,
+                  !canStartGame && styles.disabledButton,
+                ]}
+                onPress={handleStartGame}
+                disabled={!canStartGame}
+                activeOpacity={0.85}
+              >
+                <View style={styles.buttonContent}>
+                  <Play
+                    color={canStartGame ? cardTable.feltDark : cardTable.suitBlack}
+                    size={20}
+                    style={styles.playIcon}
+                  />
+                  <Text
+                    style={[
+                      styles.startGameButtonText,
+                      !canStartGame && styles.disabledButtonText,
+                    ]}
+                  >
+                    Start Rummy Game
+                  </Text>
+                </View>
+              </TouchableOpacity>
+
+              {!canStartGame && (
+                <Text style={styles.requirementText}>
+                  {players.length < 2
+                    ? "Need at least 2 players to start"
+                    : "All players must be ready to start"}
+                </Text>
+              )}
+            </View>
+          )}
+        </View>
       </View>
-    </View>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1,
+  },
   header: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.md,
-    backgroundColor: colors.surface,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.border,
+    marginBottom: spacing.lg,
   },
   backButton: {
-    padding: spacing.sm,
-    borderRadius: borderRadius.md,
-    backgroundColor: colors.backgroundSecondary,
+    width: 40,
+    height: 40,
+    borderRadius: borderRadius.full,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(255,255,255,0.08)",
+    borderWidth: 1,
+    borderColor: `${cardTable.goldDark}66`,
   },
   headerTitleContainer: {
     flex: 1,
@@ -284,21 +295,17 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     ...typography.h3,
-    color: colors.textPrimary,
-  },
-  headerSubtitle: {
-    ...typography.caption,
-    color: colors.success,
-    fontWeight: "600",
+    color: cardTable.textOnFelt,
   },
   playerCountContainer: {
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.xs,
+    marginTop: 2,
   },
   playerCount: {
     ...typography.caption,
-    color: colors.success,
+    color: cardTable.textOnFeltMuted,
     fontWeight: "600",
   },
   placeholder: {
@@ -306,7 +313,6 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    paddingTop: spacing.lg,
   },
   playersSection: {
     flex: 1,
@@ -322,42 +328,42 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     ...typography.h3,
-    color: colors.textPrimary,
+    color: cardTable.textOnFelt,
     marginLeft: spacing.sm,
   },
   statusBadge: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: colors.warningBackground,
+    backgroundColor: "rgba(255,255,255,0.08)",
     borderRadius: borderRadius.full,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs,
     alignSelf: "center",
     borderWidth: 1,
-    borderColor: colors.warningBorder,
+    borderColor: `${cardTable.goldDark}66`,
   },
   allReadyBadge: {
-    backgroundColor: colors.successBackground,
-    borderColor: colors.successBorder,
+    backgroundColor: "rgba(255,255,255,0.08)",
+    borderColor: `${cardTable.gold}80`,
   },
   statusBadgeDot: {
     width: 6,
     height: 6,
     borderRadius: 3,
-    backgroundColor: colors.warning,
+    backgroundColor: cardTable.goldLight,
     marginRight: spacing.xs,
   },
   allReadyDot: {
-    backgroundColor: colors.success,
+    backgroundColor: cardTable.gold,
   },
   statusBadgeText: {
     ...typography.body,
-    color: colors.warning,
+    color: cardTable.goldLight,
     fontWeight: "600",
     fontSize: 14,
   },
   allReadyText: {
-    color: colors.success,
+    color: cardTable.gold,
   },
   playersList: {
     flex: 1,
@@ -366,12 +372,12 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.md,
   },
   playerCard: {
-    backgroundColor: colors.surface,
+    backgroundColor: cardTable.cardFace,
     borderRadius: borderRadius.xl,
     padding: spacing.lg,
     marginBottom: spacing.md,
     borderWidth: 1,
-    borderColor: colors.border,
+    borderColor: `${cardTable.goldDark}30`,
     ...shadows.md,
   },
   playerContent: {
@@ -389,13 +395,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderWidth: 3,
-    borderColor: colors.border,
+    borderColor: "#E2E8F0",
   },
   avatarReady: {
     // Add a subtle glow effect for ready players
   },
   avatarText: {
-    color: colors.surface,
+    color: "#FFFFFF",
     fontSize: 18,
     fontWeight: "700",
   },
@@ -403,11 +409,11 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: -4,
     right: -4,
-    backgroundColor: colors.warningBackground,
+    backgroundColor: `${cardTable.gold}33`,
     borderRadius: borderRadius.full,
     padding: 4,
     borderWidth: 2,
-    borderColor: colors.surface,
+    borderColor: cardTable.cardFace,
   },
   playerDetails: {
     flex: 1,
@@ -420,18 +426,18 @@ const styles = StyleSheet.create({
   playerName: {
     ...typography.bodyLarge,
     fontWeight: "600",
-    color: colors.textPrimary,
+    color: cardTable.suitBlack,
     marginRight: spacing.sm,
   },
   youBadge: {
-    backgroundColor: colors.primary,
+    backgroundColor: cardTable.felt,
     borderRadius: borderRadius.sm,
     paddingHorizontal: spacing.xs,
     paddingVertical: 2,
   },
   youBadgeText: {
     ...typography.caption,
-    color: colors.surface,
+    color: "#FFFFFF",
     fontSize: 10,
     fontWeight: "700",
     letterSpacing: 0.5,
@@ -447,21 +453,21 @@ const styles = StyleSheet.create({
     marginRight: spacing.xs,
   },
   readyDot: {
-    backgroundColor: colors.success,
+    backgroundColor: cardTable.felt,
   },
   notReadyDot: {
-    backgroundColor: colors.warning,
+    backgroundColor: cardTable.goldDark,
   },
   statusLabel: {
     ...typography.body,
     fontSize: 14,
   },
   readyLabel: {
-    color: colors.success,
+    color: cardTable.felt,
     fontWeight: "500",
   },
   notReadyLabel: {
-    color: colors.warning,
+    color: cardTable.goldDark,
     fontWeight: "500",
   },
   readyIndicator: {
@@ -471,13 +477,13 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: colors.success,
+    backgroundColor: cardTable.felt,
     justifyContent: "center",
     alignItems: "center",
     ...shadows.sm,
   },
   checkMark: {
-    color: colors.surface,
+    color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "700",
   },
@@ -485,24 +491,34 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: colors.backgroundSecondary,
+    backgroundColor: "#F1F5F9",
     justifyContent: "center",
     alignItems: "center",
     borderWidth: 2,
-    borderColor: colors.border,
+    borderColor: "#E2E8F0",
   },
   loaderDot: {
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: colors.warning,
+    backgroundColor: cardTable.goldDark,
   },
   gameControlsSection: {
     marginBottom: spacing.xl,
   },
   startGameButton: {
+    backgroundColor: cardTable.gold,
+    borderRadius: borderRadius.lg,
     paddingVertical: spacing.lg,
     marginBottom: spacing.md,
+    alignItems: "center",
+    justifyContent: "center",
+    ...shadows.sm,
+  },
+  startGameButtonText: {
+    color: cardTable.feltDark,
+    fontSize: typography.button.fontSize,
+    fontWeight: typography.button.fontWeight,
   },
   buttonContent: {
     flexDirection: "row",
@@ -513,14 +529,14 @@ const styles = StyleSheet.create({
     marginRight: spacing.sm,
   },
   disabledButton: {
-    backgroundColor: colors.borderDark,
+    backgroundColor: "rgba(255,255,255,0.5)",
   },
   disabledButtonText: {
-    color: colors.textWhite,
+    color: cardTable.suitBlack,
   },
   requirementText: {
     ...typography.body,
-    color: colors.warning,
+    color: cardTable.textOnFeltMuted,
     textAlign: "center",
     fontStyle: "italic",
   },
