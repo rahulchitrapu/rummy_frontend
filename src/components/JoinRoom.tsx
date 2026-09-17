@@ -7,7 +7,6 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
-  Alert,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import {
@@ -20,14 +19,18 @@ import {
 } from "../styles/theme";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ArrowLeft, ArrowRight, Spade, Heart, Diamond, Club } from "lucide-react-native";
+import { ROOM } from "@/api/room";
+
+const CODE_LENGTH = 6;
 
 const JoinRoom = () => {
   const navigate = useNavigate();
   const insets = useSafeAreaInsets();
 
-  // State for the 4-digit room code
-  const [roomCode, setRoomCode] = useState(["", "", "", ""]);
+  // State for the 6-digit room code
+  const [roomCode, setRoomCode] = useState(Array(CODE_LENGTH).fill(""));
   const [isJoining, setIsJoining] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Refs for the input boxes to control focus
   const inputRefs = useRef<(TextInput | null | undefined)[]>([]);
@@ -43,7 +46,7 @@ const JoinRoom = () => {
       setRoomCode(newRoomCode);
 
       // Auto-focus to next input if current input is filled and not the last input
-      if (numericText.length === 1 && index < 3) {
+      if (numericText.length === 1 && index < CODE_LENGTH - 1) {
         inputRefs.current[index + 1]?.focus();
       }
     }
@@ -57,30 +60,52 @@ const JoinRoom = () => {
   };
 
   // Handle join room action
-  const handleJoinRoom = () => {
+  const handleJoinRoom = async () => {
+    if (isJoining) return;
+
     const code = roomCode.join("");
 
-    if (code.length !== 4) {
-      Alert.alert("Invalid Code", "Please enter a 4-digit room code");
+    if (code.length !== CODE_LENGTH) {
+      setErrorMessage(`Please enter the ${CODE_LENGTH}-digit room code`);
       return;
     }
 
+    setErrorMessage("");
     setIsJoining(true);
 
-    // Simulate joining process
-    setTimeout(() => {
-      if (code === "0000") {
-        // Navigate to room with the code as roomId
-        navigate(`/room/${code}`, { state: { roomCode: code } });
-      } else {
-        Alert.alert(
-          "Invalid Room Code",
-          "Room not found. Please check your code and try again.",
-        );
+    try {
+      const response = await ROOM.joinRoom(code);
+      const roomId = response.data.room?.id;
+
+      if (!roomId) {
+        setErrorMessage("Failed to join room. Please try again.");
+        return;
       }
+
+      navigate(`/lobby/${roomId}`);
+    } catch (error: { status: number; message: string; data?: any } | any) {
+      console.error("Failed to join room:", error);
+
+      // The backend returns the room's details even on the "you're already
+      // in this room" conflict — treat that as a soft-success and just take
+      // the user to the lobby they're already part of, instead of leaving
+      // them stuck on an error with no way forward.
+      const roomFromError = error?.data?.room;
+      if (roomFromError?.id) {
+        navigate(`/lobby/${roomFromError.id}`);
+        return;
+      }
+
+      setErrorMessage(
+        error?.message ||
+          "Room not found. Please check your code and try again.",
+      );
+    } finally {
       setIsJoining(false);
-    }, 1000);
+    }
   };
+
+  const isCodeComplete = roomCode.join("").length === CODE_LENGTH;
 
   return (
     <LinearGradient
@@ -118,7 +143,7 @@ const JoinRoom = () => {
             <Spade color={cardTable.gold} size={28} />
             <Text style={styles.title}>Join Room</Text>
             <Text style={styles.subtitle}>
-              Enter the 4-digit room code to join
+              Enter the {CODE_LENGTH}-digit room code to join
             </Text>
           </View>
 
@@ -129,7 +154,9 @@ const JoinRoom = () => {
               {roomCode.map((digit, index) => (
                 <TextInput
                   key={index}
-                  ref={(ref) => (inputRefs.current[index] = ref)}
+                  ref={(ref) => {
+                    inputRefs.current[index] = ref;
+                  }}
                   style={[
                     styles.codeInput,
                     digit !== "" && styles.codeInputFilled,
@@ -152,32 +179,34 @@ const JoinRoom = () => {
             <TouchableOpacity
               style={[
                 styles.joinButton,
-                roomCode.join("").length !== 4 && styles.disabledButton,
+                (!isCodeComplete || isJoining) && styles.disabledButton,
               ]}
               onPress={handleJoinRoom}
-              disabled={roomCode.join("").length !== 4 || isJoining}
+              disabled={!isCodeComplete || isJoining}
               activeOpacity={0.85}
             >
               <View style={styles.buttonContent}>
                 <Text
                   style={[
                     styles.joinButtonText,
-                    roomCode.join("").length !== 4 && styles.disabledButtonText,
+                    !isCodeComplete && styles.disabledButtonText,
                   ]}
                 >
                   {isJoining ? "Joining..." : "Join Room"}
                 </Text>
                 <ArrowRight
-                  color={
-                    roomCode.join("").length !== 4
-                      ? cardTable.suitBlack
-                      : cardTable.feltDark
-                  }
+                  color={!isCodeComplete ? cardTable.suitBlack : cardTable.feltDark}
                   size={20}
                   style={{ marginLeft: spacing.sm }}
                 />
               </View>
             </TouchableOpacity>
+
+            {errorMessage ? (
+              <View style={styles.errorBanner}>
+                <Text style={styles.errorBannerText}>{errorMessage}</Text>
+              </View>
+            ) : null}
           </View>
 
           {/* Decorative suit row */}
@@ -245,21 +274,29 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     flexDirection: "row",
-    gap: spacing.sm,
+    gap: spacing.xs,
     justifyContent: "center",
     marginBottom: spacing.lg,
   },
   codeInput: {
-    width: 56,
-    height: 56,
+    flex: 1,
+    minWidth: 40,
+    maxWidth: 48,
+    aspectRatio: 1,
     backgroundColor: "#FFFFFF",
-    borderRadius: borderRadius.lg,
+    borderRadius: borderRadius.md,
     borderWidth: 2,
     borderColor: "#E2E8F0",
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: "600",
+    lineHeight: 24,
     color: cardTable.suitBlack,
-    paddingHorizontal: 12,
+    // TextInput has native default padding that, combined with a small
+    // fixed-size box, was clipping/misaligning the digit — zero it out and
+    // center manually instead.
+    padding: 0,
+    textAlignVertical: "center",
+    includeFontPadding: false,
     ...shadows.sm,
   },
   codeInputFilled: {
@@ -290,6 +327,22 @@ const styles = StyleSheet.create({
   },
   disabledButtonText: {
     color: cardTable.suitBlack,
+  },
+  errorBanner: {
+    marginTop: spacing.md,
+    backgroundColor: "rgba(220,38,38,0.1)",
+    borderWidth: 1,
+    borderColor: "rgba(220,38,38,0.3)",
+    borderRadius: borderRadius.md,
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
+  },
+  errorBannerText: {
+    ...typography.body,
+    fontSize: 14,
+    color: "#B91C1C",
+    textAlign: "center",
+    fontWeight: "500",
   },
   suitRow: {
     flexDirection: "row",

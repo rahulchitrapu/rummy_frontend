@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   ActivityIndicator,
+  ScrollView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -20,17 +21,21 @@ import {
   Diamond,
   Club,
   ChevronRight,
+  List,
 } from "lucide-react-native";
 import {
   commonStyles,
   typography,
   spacing,
   borderRadius,
+  shadows,
   cardTable,
 } from "../styles/theme";
-import { ROOM } from "@/api/room";
+import { ROOM, RoomSummary } from "@/api/room";
 
 type HomeLocationState = { accountId?: string } | null;
+
+const MAX_ROOMS_ON_HOME = 5;
 
 const HomeScreen = () => {
   const insets = useSafeAreaInsets();
@@ -40,6 +45,8 @@ const HomeScreen = () => {
   const [accountId, setAccountId] = useState<string | null>(null);
   const [isCreatingRoom, setIsCreatingRoom] = useState(false);
   const [createRoomError, setCreateRoomError] = useState("");
+  const [rooms, setRooms] = useState<RoomSummary[]>([]);
+  const [isLoadingRooms, setIsLoadingRooms] = useState(false);
 
   useEffect(() => {
     // Get account ID from route state or storage
@@ -62,6 +69,24 @@ const HomeScreen = () => {
     getAccountId();
   }, [routeAccountId]);
 
+  useEffect(() => {
+    if (!accountId) return;
+
+    const fetchRooms = async () => {
+      setIsLoadingRooms(true);
+      try {
+        const response = await ROOM.getUserRooms(accountId);
+        setRooms(response.data.rooms ?? []);
+      } catch (error) {
+        console.error("Failed to fetch rooms:", error);
+      } finally {
+        setIsLoadingRooms(false);
+      }
+    };
+
+    fetchRooms();
+  }, [accountId]);
+
   const handleLogout = async () => {
     try {
       if (accountId) {
@@ -83,8 +108,15 @@ const HomeScreen = () => {
     setIsCreatingRoom(true);
 
     try {
-      await ROOM.createRoom();
-      navigate("/lobby");
+      const response = await ROOM.createRoom();
+      const roomId = response.data.room_id;
+
+      if (!roomId) {
+        setCreateRoomError("Failed to create room. Please try again.");
+        return;
+      }
+
+      navigate(`/lobby/${roomId}`);
     } catch (error: { status: number; message: string } | any) {
       console.error("Failed to create room:", error);
       setCreateRoomError(
@@ -102,13 +134,12 @@ const HomeScreen = () => {
       end={{ x: 1, y: 1 }}
       style={styles.gradient}
     >
-      <View
+      <ScrollView
         style={[
           commonStyles.centeredContainer,
           styles.safeArea,
           {
             paddingTop: insets.top + spacing.md,
-            paddingBottom: insets.bottom + spacing.md,
             // Add to the insets rather than replacing contentPadding's
             // paddingHorizontal — a longhand paddingLeft/Right here would
             // otherwise win over the shorthand and, on most phones where
@@ -117,6 +148,10 @@ const HomeScreen = () => {
             paddingRight: insets.right + spacing.lg,
           },
         ]}
+        contentContainerStyle={{
+          flexGrow: 1,
+          paddingBottom: insets.bottom + spacing.md,
+        }}
       >
         {/* Header */}
         <View>
@@ -261,6 +296,58 @@ const HomeScreen = () => {
               </View>
             ) : null}
           </View>
+
+          {/* Your Rooms */}
+          <View style={styles.yourRoomsSection}>
+            <View style={styles.yourRoomsHeaderRow}>
+              <Text style={styles.yourRoomsTitle}>Your Rooms</Text>
+              <TouchableOpacity
+                style={styles.viewAllButton}
+                onPress={() => navigate("/rooms")}
+                activeOpacity={0.7}
+              >
+                <List color={cardTable.goldLight} size={14} />
+                <Text style={styles.viewAllButtonText}>View All</Text>
+              </TouchableOpacity>
+            </View>
+
+            {isLoadingRooms ? (
+              <ActivityIndicator color={cardTable.goldLight} />
+            ) : rooms.length === 0 ? (
+              <Text style={styles.noRoomsText}>
+                You don't have any active rooms yet.
+              </Text>
+            ) : (
+              rooms.slice(0, MAX_ROOMS_ON_HOME).map((room) => (
+                <TouchableOpacity
+                  key={room.id}
+                  style={styles.roomRow}
+                  activeOpacity={0.85}
+                  onPress={() => navigate(`/lobby/${room.id}`)}
+                >
+                  <View style={styles.roomRowIconContainer}>
+                    <Users color={cardTable.felt} size={18} />
+                  </View>
+                  <View style={styles.roomRowTextContainer}>
+                    <View style={styles.roomRowTitleRow}>
+                      <Text style={styles.roomRowCode}>{room.room_code}</Text>
+                      {room.is_host && (
+                        <View style={styles.hostBadge}>
+                          <Crown color={cardTable.goldDark} size={11} />
+                          <Text style={styles.hostBadgeText}>Host</Text>
+                        </View>
+                      )}
+                    </View>
+                    <Text style={styles.roomRowMeta}>
+                      {room.status} · {room.member_count ?? 0}/
+                      {room.max_players} players
+                    </Text>
+                  </View>
+                  <ChevronRight color="#9CA3AF" size={18} />
+                </TouchableOpacity>
+              ))
+            )}
+          </View>
         </View>
 
         {/* Decorative suit row */}
@@ -270,7 +357,7 @@ const HomeScreen = () => {
           <Diamond color={cardTable.textOnFeltMuted} size={16} />
           <Club color={cardTable.textOnFeltMuted} size={16} />
         </View>
-      </View>
+      </ScrollView>
     </LinearGradient>
   );
 };
@@ -402,6 +489,93 @@ const styles = StyleSheet.create({
     borderRadius: 13,
     justifyContent: "center",
     alignItems: "center",
+  },
+  yourRoomsSection: {
+    marginTop: spacing.xl,
+  },
+  yourRoomsHeaderRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: spacing.md,
+  },
+  yourRoomsTitle: {
+    ...typography.h4,
+    color: cardTable.textOnFelt,
+  },
+  viewAllButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    paddingHorizontal: spacing.md,
+    paddingVertical: 6,
+    borderRadius: borderRadius.full,
+    backgroundColor: "rgba(255,255,255,0.08)",
+    borderWidth: 1,
+    borderColor: `${cardTable.goldDark}66`,
+  },
+  viewAllButtonText: {
+    ...typography.caption,
+    color: cardTable.goldLight,
+    fontWeight: "600",
+  },
+  noRoomsText: {
+    ...typography.body,
+    color: cardTable.textOnFeltMuted,
+    fontStyle: "italic",
+  },
+  roomRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: cardTable.cardFace,
+    borderRadius: borderRadius.lg,
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
+    marginBottom: spacing.sm,
+    ...shadows.sm,
+  },
+  roomRowIconContainer: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: spacing.sm,
+    backgroundColor: `${cardTable.felt}1A`,
+  },
+  roomRowTextContainer: {
+    flex: 1,
+  },
+  roomRowTitleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.xs,
+  },
+  roomRowCode: {
+    ...typography.body,
+    fontWeight: "700",
+    color: cardTable.suitBlack,
+  },
+  hostBadge: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 3,
+    paddingHorizontal: 6,
+    paddingVertical: 1,
+    borderRadius: borderRadius.full,
+    backgroundColor: `${cardTable.gold}26`,
+  },
+  hostBadgeText: {
+    ...typography.caption,
+    fontSize: 10,
+    fontWeight: "700",
+    color: cardTable.goldDark,
+  },
+  roomRowMeta: {
+    ...typography.caption,
+    color: "#6B7280",
+    textTransform: "capitalize",
+    marginTop: 2,
   },
   suitFooter: {
     flexDirection: "row",

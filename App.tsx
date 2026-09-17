@@ -12,6 +12,8 @@ import HomeScreen from "@/components/HomeScreen";
 import JoinRoom from "@/components/JoinRoom";
 import Room from "@/components/Room";
 import Lobby from "@/components/Lobby";
+import AllRooms from "@/components/AllRooms";
+import GameScreen from "@/components/GameScreen";
 
 import { CrossPlatformStorage } from "@/utils/storage";
 import { useAndroidBackHandler } from "@/hooks/useAndroidBackHandler";
@@ -57,9 +59,14 @@ export default function App() {
           <Route path="/create-account" element={<CreateAccountScreen />} />
           <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
           <Route path="/home" element={<HomeScreen />} />
+          <Route path="/rooms" element={<AllRooms />} />
           <Route path="/join-room" element={<JoinRoom />} />
           <Route path="/room/:roomId" element={<Room />} />
-          <Route path="/lobby" element={<Lobby />} />
+          <Route
+            path="/room/:roomId/code/:code/user/:userId"
+            element={<GameScreen />}
+          />
+          <Route path="/lobby/:roomId" element={<Lobby />} />
           <Route path="*" element={<Navigate to={defaultRoute} replace />} />
         </Routes>
       </Router>

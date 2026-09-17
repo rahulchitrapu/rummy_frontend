@@ -103,9 +103,13 @@ class ApiService {
           message:
             error.response.data?.message ||
             error.response.data?.error_msg ||
+            (typeof error.response.data?.error === "string"
+              ? error.response.data.error
+              : undefined) ||
             `HTTP ${error.response.status}: ${error.response.statusText}`,
           status: error.response.status,
           code: error.response.data?.code,
+          data: error.response.data,
         } as ApiError;
       }
 
