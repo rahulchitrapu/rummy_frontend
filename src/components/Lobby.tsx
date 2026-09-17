@@ -132,7 +132,13 @@ export default function Lobby() {
     (p) => String(p.player.id) === accountId,
   );
   const isHost = currentPlayer?.is_host ?? false;
+  const isRoomActive = room?.status === "active";
   const canStartGame = isHost && players.length >= 2 && !isStartingGame;
+
+  const handleGoToGame = () => {
+    if (!roomId || !room || !accountId) return;
+    navigate(`/room/${roomId}/code/${room.room_code}/user/${accountId}`);
+  };
 
   const handleStartGame = async () => {
     if (isStartingGame || !roomId || !room) return;
@@ -255,6 +261,22 @@ export default function Lobby() {
               </View>
             </View>
 
+            {/* Game in progress — visible to every player in the room */}
+            {isRoomActive && (
+              <TouchableOpacity
+                style={styles.goToGameButton}
+                onPress={handleGoToGame}
+                activeOpacity={0.85}
+              >
+                <Play
+                  color={cardTable.feltDark}
+                  size={18}
+                  style={{ marginRight: spacing.sm }}
+                />
+                <Text style={styles.goToGameButtonText}>Move to Game</Text>
+              </TouchableOpacity>
+            )}
+
             {/* Players Grid */}
             <View style={styles.playersSection}>
               <View style={styles.playersHeadingRow}>
@@ -262,7 +284,7 @@ export default function Lobby() {
                   Players ({players.length}/{MAX_PLAYERS})
                 </Text>
 
-                {isHost && (
+                {isHost && !isRoomActive && (
                   <TouchableOpacity
                     style={[
                       styles.startGameButton,
@@ -297,7 +319,7 @@ export default function Lobby() {
                 )}
               </View>
 
-              {isHost && !isStartingGame && players.length < 2 && (
+              {isHost && !isRoomActive && !isStartingGame && players.length < 2 && (
                 <Text style={styles.requirementText}>
                   Need at least 2 players to start
                 </Text>
@@ -389,7 +411,7 @@ export default function Lobby() {
 
             {/* Host starts the game via the button next to "Players" above;
                 non-hosts just see a status line here. */}
-            {!isHost && (
+            {!isHost && !isRoomActive && (
               <Text style={styles.waitingForHostText}>
                 Waiting for the host to start the game…
               </Text>
@@ -493,6 +515,21 @@ const styles = StyleSheet.create({
     ...typography.caption,
     color: cardTable.goldDark,
     fontWeight: "700",
+  },
+  goToGameButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: cardTable.gold,
+    borderRadius: borderRadius.lg,
+    paddingVertical: spacing.md,
+    marginBottom: spacing.xl,
+    ...shadows.md,
+  },
+  goToGameButtonText: {
+    color: cardTable.feltDark,
+    fontSize: typography.button.fontSize,
+    fontWeight: typography.button.fontWeight,
   },
   playersSection: {
     marginBottom: spacing.lg,

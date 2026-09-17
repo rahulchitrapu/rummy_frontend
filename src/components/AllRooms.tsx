@@ -33,6 +33,7 @@ const AllRooms = () => {
   const navigate = useNavigate();
 
   const [rooms, setRooms] = useState<RoomSummary[]>([]);
+  const [accountId, setAccountId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState("");
@@ -46,13 +47,14 @@ const AllRooms = () => {
     setError("");
 
     try {
-      const accountId = await CrossPlatformStorage.getItem("accountId");
-      if (!accountId) {
+      const storedAccountId = await CrossPlatformStorage.getItem("accountId");
+      if (!storedAccountId) {
         navigate("/login");
         return;
       }
+      setAccountId(storedAccountId);
 
-      const response = await ROOM.getUserRooms(accountId);
+      const response = await ROOM.getUserRooms(storedAccountId);
       setRooms(response.data.rooms ?? []);
     } catch (err: { status: number; message: string } | any) {
       console.error("Failed to fetch rooms:", err);
@@ -138,33 +140,50 @@ const AllRooms = () => {
             data={rooms}
             keyExtractor={(room) => String(room.id)}
             showsVerticalScrollIndicator={false}
-            renderItem={({ item: room }) => (
-              <TouchableOpacity
-                style={styles.roomRow}
-                activeOpacity={0.85}
-                onPress={() => navigate(`/lobby/${room.id}`)}
-              >
-                <View style={styles.roomRowIconContainer}>
-                  <Users color={cardTable.felt} size={20} />
-                </View>
-                <View style={styles.roomRowTextContainer}>
-                  <View style={styles.roomRowTitleRow}>
-                    <Text style={styles.roomRowCode}>{room.room_code}</Text>
-                    {room.is_host && (
-                      <View style={styles.hostBadge}>
-                        <Crown color={cardTable.goldDark} size={11} />
-                        <Text style={styles.hostBadgeText}>Host</Text>
-                      </View>
-                    )}
+            renderItem={({ item: room }) => {
+              const isRoomActive = room.status === "active";
+              return (
+                <TouchableOpacity
+                  style={styles.roomRow}
+                  activeOpacity={0.85}
+                  onPress={() =>
+                    isRoomActive
+                      ? navigate(
+                          `/room/${room.id}/code/${room.room_code}/user/${accountId}`,
+                        )
+                      : navigate(`/lobby/${room.id}`)
+                  }
+                >
+                  <View style={styles.roomRowIconContainer}>
+                    <Users color={cardTable.felt} size={20} />
                   </View>
-                  <Text style={styles.roomRowMeta}>
-                    {room.status} · {room.member_count ?? 0}/
-                    {room.max_players} players
-                  </Text>
-                </View>
-                <ChevronRight color="#9CA3AF" size={20} />
-              </TouchableOpacity>
-            )}
+                  <View style={styles.roomRowTextContainer}>
+                    <View style={styles.roomRowTitleRow}>
+                      <Text style={styles.roomRowCode}>{room.room_code}</Text>
+                      {room.is_host && (
+                        <View style={styles.hostBadge}>
+                          <Crown color={cardTable.goldDark} size={11} />
+                          <Text style={styles.hostBadgeText}>Host</Text>
+                        </View>
+                      )}
+                    </View>
+                    <Text style={styles.roomRowMeta}>
+                      {room.status} · {room.member_count ?? 0}/
+                      {room.max_players} players
+                    </Text>
+                  </View>
+                  {isRoomActive ? (
+                    <View style={styles.moveToGameBadge}>
+                      <Text style={styles.moveToGameBadgeText}>
+                        Move to Game
+                      </Text>
+                    </View>
+                  ) : (
+                    <ChevronRight color="#9CA3AF" size={20} />
+                  )}
+                </TouchableOpacity>
+              );
+            }}
           />
         )}
       </View>
@@ -262,6 +281,18 @@ const styles = StyleSheet.create({
     color: "#6B7280",
     textTransform: "capitalize",
     marginTop: 2,
+  },
+  moveToGameBadge: {
+    backgroundColor: cardTable.gold,
+    borderRadius: borderRadius.full,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: 6,
+  },
+  moveToGameBadgeText: {
+    ...typography.caption,
+    fontSize: 11,
+    fontWeight: "700",
+    color: cardTable.feltDark,
   },
   errorBanner: {
     marginBottom: spacing.md,

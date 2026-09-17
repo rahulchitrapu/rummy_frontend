@@ -33,7 +33,11 @@ import {
 } from "../styles/theme";
 import { ROOM, RoomSummary } from "@/api/room";
 
-type HomeLocationState = { accountId?: string } | null;
+type HomeLocationState = {
+  accountId?: string;
+  name?: string;
+  email?: string;
+} | null;
 
 const MAX_ROOMS_ON_HOME = 5;
 
@@ -41,23 +45,29 @@ const HomeScreen = () => {
   const insets = useSafeAreaInsets();
   const navigate = useNavigate();
   const location = useLocation();
-  const routeAccountId = (location.state as HomeLocationState)?.accountId;
+  const routeState = location.state as HomeLocationState;
+  const routeAccountId = routeState?.accountId;
   const [accountId, setAccountId] = useState<string | null>(null);
+  const [playerName, setPlayerName] = useState<string | null>(null);
   const [isCreatingRoom, setIsCreatingRoom] = useState(false);
   const [createRoomError, setCreateRoomError] = useState("");
   const [rooms, setRooms] = useState<RoomSummary[]>([]);
   const [isLoadingRooms, setIsLoadingRooms] = useState(false);
 
   useEffect(() => {
-    // Get account ID from route state or storage
-    const getAccountId = async () => {
+    // Get account ID and name from route state or storage
+    const getAccountDetails = async () => {
       try {
         if (routeAccountId) {
           setAccountId(routeAccountId);
+          setPlayerName(routeState?.name ?? null);
         } else {
-          const storedAccountId =
-            await CrossPlatformStorage.getItem("accountId");
+          const [storedAccountId, storedName] = await Promise.all([
+            CrossPlatformStorage.getItem("accountId"),
+            CrossPlatformStorage.getItem("name"),
+          ]);
           setAccountId(storedAccountId);
+          setPlayerName(storedName);
         }
       } catch (error) {
         console.error("Failed to get account ID:", error);
@@ -66,7 +76,7 @@ const HomeScreen = () => {
       }
     };
 
-    getAccountId();
+    getAccountDetails();
   }, [routeAccountId]);
 
   useEffect(() => {
@@ -91,6 +101,8 @@ const HomeScreen = () => {
     try {
       if (accountId) {
         await CrossPlatformStorage.removeItem("accountId");
+        await CrossPlatformStorage.removeItem("name");
+        await CrossPlatformStorage.removeItem("email");
       }
 
       navigate("/login");
@@ -173,7 +185,9 @@ const HomeScreen = () => {
 
           {accountId ? (
             <View style={styles.playerChip}>
-              <Text style={styles.playerChipText}>Player #{accountId}</Text>
+              <Text style={styles.playerChipText}>
+                {playerName || `Player #${accountId}`}
+              </Text>
             </View>
           ) : null}
         </View>
@@ -318,34 +332,51 @@ const HomeScreen = () => {
                 You don't have any active rooms yet.
               </Text>
             ) : (
-              rooms.slice(0, MAX_ROOMS_ON_HOME).map((room) => (
-                <TouchableOpacity
-                  key={room.id}
-                  style={styles.roomRow}
-                  activeOpacity={0.85}
-                  onPress={() => navigate(`/lobby/${room.id}`)}
-                >
-                  <View style={styles.roomRowIconContainer}>
-                    <Users color={cardTable.felt} size={18} />
-                  </View>
-                  <View style={styles.roomRowTextContainer}>
-                    <View style={styles.roomRowTitleRow}>
-                      <Text style={styles.roomRowCode}>{room.room_code}</Text>
-                      {room.is_host && (
-                        <View style={styles.hostBadge}>
-                          <Crown color={cardTable.goldDark} size={11} />
-                          <Text style={styles.hostBadgeText}>Host</Text>
-                        </View>
-                      )}
+              rooms.slice(0, MAX_ROOMS_ON_HOME).map((room) => {
+                const isRoomActive = room.status === "active";
+                return (
+                  <TouchableOpacity
+                    key={room.id}
+                    style={styles.roomRow}
+                    activeOpacity={0.85}
+                    onPress={() =>
+                      isRoomActive
+                        ? navigate(
+                            `/room/${room.id}/code/${room.room_code}/user/${accountId}`,
+                          )
+                        : navigate(`/lobby/${room.id}`)
+                    }
+                  >
+                    <View style={styles.roomRowIconContainer}>
+                      <Users color={cardTable.felt} size={18} />
                     </View>
-                    <Text style={styles.roomRowMeta}>
-                      {room.status} · {room.member_count ?? 0}/
-                      {room.max_players} players
-                    </Text>
-                  </View>
-                  <ChevronRight color="#9CA3AF" size={18} />
-                </TouchableOpacity>
-              ))
+                    <View style={styles.roomRowTextContainer}>
+                      <View style={styles.roomRowTitleRow}>
+                        <Text style={styles.roomRowCode}>{room.room_code}</Text>
+                        {room.is_host && (
+                          <View style={styles.hostBadge}>
+                            <Crown color={cardTable.goldDark} size={11} />
+                            <Text style={styles.hostBadgeText}>Host</Text>
+                          </View>
+                        )}
+                      </View>
+                      <Text style={styles.roomRowMeta}>
+                        {room.status} · {room.member_count ?? 0}/
+                        {room.max_players} players
+                      </Text>
+                    </View>
+                    {isRoomActive ? (
+                      <View style={styles.moveToGameBadge}>
+                        <Text style={styles.moveToGameBadgeText}>
+                          Move to Game
+                        </Text>
+                      </View>
+                    ) : (
+                      <ChevronRight color="#9CA3AF" size={18} />
+                    )}
+                  </TouchableOpacity>
+                );
+              })
             )}
           </View>
         </View>
@@ -576,6 +607,18 @@ const styles = StyleSheet.create({
     color: "#6B7280",
     textTransform: "capitalize",
     marginTop: 2,
+  },
+  moveToGameBadge: {
+    backgroundColor: cardTable.gold,
+    borderRadius: borderRadius.full,
+    paddingHorizontal: spacing.sm,
+    paddingVertical: 6,
+  },
+  moveToGameBadgeText: {
+    ...typography.caption,
+    fontSize: 11,
+    fontWeight: "700",
+    color: cardTable.feltDark,
   },
   suitFooter: {
     flexDirection: "row",

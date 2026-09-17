@@ -53,13 +53,18 @@ const LoginScreen = () => {
       });
 
       if (response.success) {
-        const userId = response.data.user.id.toString();
+        const { user } = response.data;
+        const userId = user.id.toString();
 
-        // Store user ID in secure storage
+        // Store user ID, name, and email in secure storage
         await CrossPlatformStorage.setItem("accountId", userId);
+        await CrossPlatformStorage.setItem("name", user.name);
+        await CrossPlatformStorage.setItem("email", user.email);
 
-        // Navigate to home page with account ID parameter
-        navigate("/home", { state: { accountId: userId } });
+        // Navigate to home page with account details
+        navigate("/home", {
+          state: { accountId: userId, name: user.name, email: user.email },
+        });
       } else {
         console.log("Login failed with response:", response);
         setErrorMessage("Login failed. Please try again.");

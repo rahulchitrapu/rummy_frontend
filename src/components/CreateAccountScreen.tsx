@@ -61,13 +61,18 @@ const CreateAccountScreen = () => {
       const response = await authAPI.register({ name, email, password });
 
       if (response.success) {
-        const userId = response.data.user.id.toString();
+        const { user } = response.data;
+        const userId = user.id.toString();
 
-        // Store user ID in secure storage, same as sign-in
+        // Store user ID, name, and email in secure storage, same as sign-in
         await CrossPlatformStorage.setItem("accountId", userId);
+        await CrossPlatformStorage.setItem("name", user.name);
+        await CrossPlatformStorage.setItem("email", user.email);
 
         // New account is signed in immediately — go straight to home
-        navigate("/home", { state: { accountId: userId } });
+        navigate("/home", {
+          state: { accountId: userId, name: user.name, email: user.email },
+        });
       } else {
         console.log("Registration failed with response:", response);
         setErrorMessage("Account creation failed. Please try again.");

@@ -2389,3 +2389,265 @@
 {"_e":"metro:client_log","_t":1789625043810,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
 {"_e":"metro:client_log","_t":1789625043810,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
 {"_e":"metro:client_log","_t":1789625043810,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1789627172215,"id":"1i","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789627172216,"id":"1i","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789627172256,"id":"1i","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789627172357,"id":"1i","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789627172371,"id":"1i","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789627172472,"id":"1i","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789627172553,"id":"1i","total":1,"ms":338.492958}
+{"_e":"metro:client_log","_t":1789627180442,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789627180442,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789627180442,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789627180443,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789627181208,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:bundling:started","_t":1789628280086,"id":"1l","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789628280087,"id":"1l","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789628280091,"id":"1l","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789628280165,"id":"1l","total":1,"ms":77.959167}
+{"_e":"metro:bundling:started","_t":1789628280275,"id":"1n","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1789628280376,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1789628280376,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789628280376,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789628280376,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789628280376,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789628280376,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1789628280376,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:bundling:started","_t":1789628293349,"id":"1o","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789628293349,"id":"1o","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789628293383,"id":"1o","total":1,"ms":34.659542}
+{"_e":"metro:bundling:started","_t":1789628293488,"id":"1q","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1789628293589,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1789628293589,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789628293589,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789628293589,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789628293589,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789628293589,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1789628293589,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1789628298863,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1789628299852,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:bundling:started","_t":1789628463024,"id":"1r","platform":"web","environment":null,"entry":"src/components/LoginScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789628468705,"id":"1s","platform":"web","environment":null,"entry":"src/components/CreateAccountScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789628482820,"id":"1t","platform":"web","environment":null,"entry":"src/components/HomeScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789628487409,"id":"1u","platform":"web","environment":null,"entry":"src/components/HomeScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789628493463,"id":"1v","platform":"web","environment":null,"entry":"src/components/HomeScreen.tsx"}
+{"_e":"metro:client_log","_t":1789628596821,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1789628596823,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 401]"]}
+{"_e":"metro:client_log","_t":1789628596841,"level":"log","data":["Error type:","object"]}
+{"_e":"metro:client_log","_t":1789628596841,"level":"log","data":["Error details:","{\n  \"message\": \"Invalid credentials\",\n  \"status\": 401,\n  \"data\": {\n    \"message\": \"Invalid credentials\"\n  }\n}"]}
+{"_e":"metro:client_log","_t":1789628596841,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1789628596863,"level":"error","data":["Login error:","{\"code\": undefined, \"data\": {\"message\": \"Invalid credentials\"}, \"message\": \"Invalid credentials\", \"status\": 401}","\n\n\u001b[1mCode: LoginScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 71 |\u001b[39m       }\n \u001b[90m 72 |\u001b[39m     } \u001b[36mcatch\u001b[39m (error\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 73 |\u001b[39m       console\u001b[33m.\u001b[39merror(\u001b[32m\"Login error:\"\u001b[39m\u001b[33m,\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 74 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m\"Error type:\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36mtypeof\u001b[39m error)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m       console\u001b[33m.\u001b[39mlog(\u001b[32m\"Error details:\"\u001b[39m\u001b[33m,\u001b[39m \u001b[33mJSON\u001b[39m\u001b[33m.\u001b[39mstringify(error\u001b[33m,\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m,\u001b[39m \u001b[35m2\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 76 |\u001b[39m       \u001b[36mif\u001b[39m (error\u001b[33m.\u001b[39mstatus \u001b[33m===\u001b[39m \u001b[35m401\u001b[39m) {\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  handleSignIn (\u001b]8;;src/components/LoginScreen.tsx:73:15\u0007src/components/LoginScreen.tsx:73:15\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1789628602508,"level":"log","data":["=== LOGIN DEBUG END ==="]}
+{"_e":"metro:client_log","_t":1789628736809,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1789628736810,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 404]"]}
+{"_e":"metro:client_log","_t":1789628736835,"level":"error","data":["Failed to load game state:","{\"code\": undefined, \"data\": {\"error\": \"Game not found\"}, \"message\": \"Game not found\", \"status\": 404}","\n\n\u001b[1mCode: GameScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 34 |\u001b[39m   \u001b[36mconst\u001b[39m insets \u001b[33m=\u001b[39m useSafeAreaInsets()\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m   \u001b[36mconst\u001b[39m navigate \u001b[33m=\u001b[39m useNavigate()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m   \u001b[36mconst\u001b[39m { roomId\u001b[33m,\u001b[39m code\u001b[33m,\u001b[39m userId } \u001b[33m=\u001b[39m useParams\u001b[33m<\u001b[39m{\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m     roomId\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m     code\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m     userId\u001b[33m:\u001b[39m string\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  GameScreen (\u001b]8;;src/components/GameScreen.tsx:36:17\u0007src/components/GameScreen.tsx:36:17\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1789631630659,"id":"1z","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789631630660,"id":"1z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789631630720,"id":"1z","total":1,"ms":60.183125}
+{"_e":"metro:bundling:started","_t":1789631630839,"id":"21","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1789631630941,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1789631630941,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789631630941,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789631630941,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789631630941,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789631630941,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1789631630941,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1789631630992,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:client_log","_t":1789631631850,"level":"log","data":["❌ Request failed with error:"]}
+{"_e":"metro:client_log","_t":1789631631850,"level":"log","data":["- Error:","[AxiosError: Request failed with status code 404]"]}
+{"_e":"metro:client_log","_t":1789631631858,"level":"error","data":["Failed to load game state:","{\"code\": undefined, \"data\": {\"error\": \"Game not found\"}, \"message\": \"Game not found\", \"status\": 404}","\n\n\u001b[1mCode: GameScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 60 |\u001b[39m         setGame(response\u001b[33m.\u001b[39mdata)\u001b[33m;\u001b[39m\n \u001b[90m 61 |\u001b[39m       } \u001b[36mcatch\u001b[39m (err\u001b[33m:\u001b[39m { status\u001b[33m:\u001b[39m number\u001b[33m;\u001b[39m message\u001b[33m:\u001b[39m string } \u001b[33m|\u001b[39m any) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 62 |\u001b[39m         console\u001b[33m.\u001b[39merror(\u001b[32m\"Failed to load game state:\"\u001b[39m\u001b[33m,\u001b[39m err)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 63 |\u001b[39m         setError(err\u001b[33m?\u001b[39m\u001b[33m.\u001b[39mmessage \u001b[33m||\u001b[39m \u001b[32m\"Failed to load game.\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 64 |\u001b[39m       } \u001b[36mfinally\u001b[39m {\n \u001b[90m 65 |\u001b[39m         setIsLoading(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  fetchGame (\u001b]8;;src/components/GameScreen.tsx:62:17\u0007src/components/GameScreen.tsx:62:17\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1789639205774,"id":"23","platform":"web","environment":null,"entry":"src/api/game.ts"}
+{"_e":"metro:bundling:started","_t":1789639244802,"id":"24","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789640292130,"id":"26","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789640292130,"id":"26","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789640292180,"id":"26","total":1,"ms":50.426}
+{"_e":"metro:bundling:started","_t":1789640292297,"id":"28","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1789640292397,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1789640292398,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789640292398,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789640292398,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789640292398,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789640292398,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1789640292398,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1789640292503,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:started","_t":1789643606022,"id":"2b","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789643606022,"id":"2b","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789643606086,"id":"2b","total":1,"ms":64.161625}
+{"_e":"metro:client_log","_t":1789643614051,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789643614053,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789643614053,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789643614053,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789643615112,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:bundling:started","_t":1789643712788,"id":"2d","platform":"web","environment":null,"entry":"src/components/Lobby.tsx"}
+{"_e":"metro:bundling:started","_t":1789643719379,"id":"2e","platform":"web","environment":null,"entry":"src/components/Lobby.tsx"}
+{"_e":"metro:bundling:started","_t":1789643724912,"id":"2f","platform":"web","environment":null,"entry":"src/components/Lobby.tsx"}
+{"_e":"metro:bundling:started","_t":1789643734166,"id":"2g","platform":"web","environment":null,"entry":"src/components/Lobby.tsx"}
+{"_e":"metro:bundling:started","_t":1789643739467,"id":"2h","platform":"web","environment":null,"entry":"src/components/Lobby.tsx"}
+{"_e":"metro:bundling:started","_t":1789643818500,"id":"2i","platform":"web","environment":null,"entry":"src/components/HomeScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789643827613,"id":"2j","platform":"web","environment":null,"entry":"src/components/HomeScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789643838062,"id":"2k","platform":"web","environment":null,"entry":"src/components/AllRooms.tsx"}
+{"_e":"metro:bundling:started","_t":1789643847323,"id":"2l","platform":"web","environment":null,"entry":"src/components/AllRooms.tsx"}
+{"_e":"metro:bundling:started","_t":1789643852097,"id":"2m","platform":"web","environment":null,"entry":"src/components/AllRooms.tsx"}
+{"_e":"metro:bundling:started","_t":1789651535129,"id":"2n","platform":"web","environment":null,"entry":"src/api/game.ts"}
+{"_e":"metro:bundling:started","_t":1789651545394,"id":"2o","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789651551546,"id":"2p","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789651555429,"id":"2q","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789651559846,"id":"2r","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789651565605,"id":"2s","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789651578544,"id":"2t","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789651585534,"id":"2u","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789651600072,"id":"2v","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789651611835,"id":"2w","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789651617589,"id":"2x","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789651622996,"id":"2y","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789651873146,"id":"2z","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789651873146,"id":"2z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789651873226,"id":"2z","total":1,"ms":79.84175}
+{"_e":"metro:client_log","_t":1789651882684,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789651882684,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789651882684,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789651882684,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789651884050,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:bundling:started","_t":1789652218200,"id":"31","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789652230581,"id":"32","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789652257205,"id":"33","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653006180,"id":"34","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653099481,"id":"35","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653103027,"id":"36","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653110893,"id":"37","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653117624,"id":"38","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653262748,"id":"39","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653268112,"id":"3a","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653729825,"id":"3b","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789653729825,"id":"3b","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789653729880,"id":"3b","total":1,"ms":54.586167}
+{"_e":"metro:client_log","_t":1789653740006,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789653740006,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789653740006,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789653740006,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789653741509,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:bundling:started","_t":1789653749297,"id":"3d","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653755848,"id":"3e","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653759850,"id":"3f","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653774950,"id":"3g","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653786693,"id":"3h","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789653997407,"id":"3i","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654008292,"id":"3j","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654517278,"id":"3k","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654520797,"id":"3l","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654524453,"id":"3m","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654531002,"id":"3n","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654546554,"id":"3o","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:client_log","_t":1789654546606,"level":"warn","data":["An error occurred in the <GameScreen> component.\n\nConsider adding an error boundary to your tree to customize error handling behavior.\nVisit https://react.dev/link/error-boundaries to learn more about error boundaries.\n"]}
+{"_e":"metro:client_log","_t":1789654546632,"level":"error","data":["[ReferenceError: ArrowUpDown is not defined]","\n\n\u001b[1mCode: GameScreen.tsx\u001b[22m\n\u001b[0m \u001b[90m 470 |\u001b[39m                   activeOpacity\u001b[33m=\u001b[39m{\u001b[35m0.8\u001b[39m}\n \u001b[90m 471 |\u001b[39m                 \u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 472 |\u001b[39m                   \u001b[33m<\u001b[39m\u001b[33mArrowUpDown\u001b[39m\n \u001b[90m     |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 473 |\u001b[39m                     color\u001b[33m=\u001b[39m{isHandSorted \u001b[33m?\u001b[39m \u001b[32m\"#FFFFFF\"\u001b[39m \u001b[33m:\u001b[39m cardTable\u001b[33m.\u001b[39mfeltDark}\n \u001b[90m 474 |\u001b[39m                     size\u001b[33m=\u001b[39m{\u001b[35m20\u001b[39m}\n \u001b[90m 475 |\u001b[39m                   \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  GameScreen (\u001b]8;;src/components/GameScreen.tsx:472:20\u0007src/components/GameScreen.tsx:472:20\u001b]8;;\u0007)\u001b[39m","\n\n\u001b[1mCode: App.tsx\u001b[22m\n\u001b[0m \u001b[90m 65 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m\n \u001b[90m 66 |\u001b[39m             path\u001b[33m=\u001b[39m\u001b[32m\"/room/:roomId/code/:code/user/:userId\"\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 67 |\u001b[39m             element\u001b[33m=\u001b[39m{\u001b[33m<\u001b[39m\u001b[33mGameScreen\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m}\n \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 68 |\u001b[39m           \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 69 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"/lobby/:roomId\"\u001b[39m element\u001b[33m=\u001b[39m{\u001b[33m<\u001b[39m\u001b[33mLobby\u001b[39m \u001b[35m/>} /\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 70 |\u001b[39m           \u001b[33m<\u001b[39m\u001b[33mRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"*\"\u001b[39m element\u001b[33m=\u001b[39m{\u001b[33m<\u001b[39m\u001b[33mNavigate\u001b[39m to\u001b[33m=\u001b[39m{defaultRoute} replace \u001b[35m/>} /\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  App (\u001b]8;;App.tsx:67:22\u0007App.tsx:67:22\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1789654546918,"level":"error","data":["[ReferenceError: Property 'ArrowUpDown' doesn't exist]"]}
+{"_e":"metro:bundling:started","_t":1789654550179,"id":"3t","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654559823,"id":"3u","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654574312,"id":"3w","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789654574312,"id":"3w","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789654574364,"id":"3w","total":1,"ms":51.838167}
+{"_e":"metro:bundling:started","_t":1789654574506,"id":"3y","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1789654574608,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1789654574608,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789654574608,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789654574608,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789654574608,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789654574608,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1789654574608,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1789654574661,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:started","_t":1789654663348,"id":"40","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654671997,"id":"41","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654683286,"id":"42","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654768475,"id":"43","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654777678,"id":"44","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654936226,"id":"45","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654940200,"id":"46","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789654967845,"id":"47","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789654967846,"id":"47","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789654967904,"id":"47","total":1,"ms":58.429125}
+{"_e":"metro:client_log","_t":1789654977903,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789654977903,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789654977903,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789654977903,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789654979288,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:bundling:started","_t":1789655244174,"id":"4b","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789655244175,"id":"4b","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789655244237,"id":"4b","total":1,"ms":62.722792}
+{"_e":"metro:bundling:started","_t":1789655244682,"id":"4c","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:client_log","_t":1789655256149,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789655256149,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789655256149,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789655256149,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789655256596,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:bundling:started","_t":1789655306975,"id":"4e","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789655306975,"id":"4e","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789655307026,"id":"4e","total":1,"ms":50.92825}
+{"_e":"metro:client_log","_t":1789655331212,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789655331212,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789655331212,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789655331212,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789655331420,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:bundling:started","_t":1789655394042,"id":"4h","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789655394042,"id":"4h","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789655394098,"id":"4h","total":1,"ms":55.96725}
+{"_e":"metro:bundling:started","_t":1789655395235,"id":"4i","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789655395235,"id":"4i","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789655395280,"id":"4i","total":1,"ms":44.8515}
+{"_e":"metro:client_log","_t":1789655400516,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789655400516,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789655400516,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789655400516,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789655400984,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:bundling:started","_t":1789655650473,"id":"4k","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789655659370,"id":"4l","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789655794480,"id":"4n","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789655804756,"id":"4o","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:failed","_t":1789655816303,"id":null,"message":"SyntaxError: /Users/rahul/code/personal/rummy_frontend/src/components/GameScreen.tsx: Expected corresponding JSX closing tag for <ScrollView>. (630:10)\n\n  628 |               </View>\n  629 |             ) : null}\n> 630 |           </View>\n      |           ^\n  631 |         )}\n  632 |       </View>\n  633 |     </LinearGradient>","importStack":null,"filename":"src/components/GameScreen.tsx","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1789655816311,"level":"error","data":["[TransformError: SyntaxError: /Users/rahul/code/personal/rummy_frontend/src/components/GameScreen.tsx: Expected corresponding JSX closing tag for <ScrollView>. (630:10)\n\n  628 |               </View>\n  629 |             ) : null}\n> 630 |           </View>\n      |           ^\n  631 |         )}\n  632 |       </View>\n  633 |     </LinearGradient>]"]}
+{"_e":"metro:bundling:failed","_t":1789655816330,"id":null,"message":"SyntaxError: /Users/rahul/code/personal/rummy_frontend/src/components/GameScreen.tsx: Expected corresponding JSX closing tag for <ScrollView>. (630:10)\n\n  628 |               </View>\n  629 |             ) : null}\n> 630 |           </View>\n      |           ^\n  631 |         )}\n  632 |       </View>\n  633 |     </LinearGradient>","importStack":null,"filename":"src/components/GameScreen.tsx","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1789655827483,"id":"4q","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789655852064,"id":"4r","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789655865501,"id":"4s","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:failed","_t":1789655876542,"id":null,"message":"SyntaxError: /Users/rahul/code/personal/rummy_frontend/src/components/GameScreen.tsx: Expected corresponding JSX closing tag for <Pressable>. (655:10)\n\n  653 |               )}\n  654 |             </ScrollView>\n> 655 |           </View>\n      |           ^\n  656 |         </Pressable>\n  657 |       </Modal>\n  658 |     </LinearGradient>","importStack":null,"filename":"src/components/GameScreen.tsx","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:client_log","_t":1789655876542,"level":"error","data":["[TransformError: SyntaxError: /Users/rahul/code/personal/rummy_frontend/src/components/GameScreen.tsx: Expected corresponding JSX closing tag for <Pressable>. (655:10)\n\n  653 |               )}\n  654 |             </ScrollView>\n> 655 |           </View>\n      |           ^\n  656 |         </Pressable>\n  657 |       </Modal>\n  658 |     </LinearGradient>]"]}
+{"_e":"metro:bundling:failed","_t":1789655876551,"id":null,"message":"SyntaxError: /Users/rahul/code/personal/rummy_frontend/src/components/GameScreen.tsx: Expected corresponding JSX closing tag for <Pressable>. (655:10)\n\n  653 |               )}\n  654 |             </ScrollView>\n> 655 |           </View>\n      |           ^\n  656 |         </Pressable>\n  657 |       </Modal>\n  658 |     </LinearGradient>","importStack":null,"filename":"src/components/GameScreen.tsx","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1789655882768,"id":"4u","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789655899160,"id":"4v","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"root:init","_t":1789656074023,"format":"v0-jsonl","version":"57.0.21"}
+{"_e":"env:mode","_t":1789656074024,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789656074024,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1789656074172,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789656074485,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789656074584,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789656074939,"atlas":false,"workers":7,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789656098602,"id":"2","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789656098603,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789656098610,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789656098721,"id":"2","progress":0.5584749682044167,"total":186,"current":139}
+{"_e":"metro:bundling:progress","_t":1789656098821,"id":"2","progress":0.5584749682044167,"total":1899,"current":149}
+{"_e":"metro:bundling:progress","_t":1789656098922,"id":"2","progress":0.9512764476423559,"total":1946,"current":1898}
+{"_e":"metro:bundling:done","_t":1789656099031,"id":"2","total":1946,"ms":429.025541}
+{"_e":"metro:bundling:started","_t":1789656099181,"id":"4","platform":"web","environment":null,"entry":"index.ts"}
+{"_e":"metro:client_log","_t":1789656099284,"level":"info","data":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"]}
+{"_e":"metro:client_log","_t":1789656099284,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789656099284,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789656099284,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789656099284,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789656099284,"level":"warn","data":["\"shadow*\" style props are deprecated. Use \"boxShadow\"."]}
+{"_e":"metro:client_log","_t":1789656099284,"level":"log","data":["Running application \"main\" with appParams:\n","{\"hydrate\": undefined, \"rootTag\": \"#root\"}","\nDevelopment-level warnings: ON.\nPerformance optimizations: OFF."]}
+{"_e":"metro:client_log","_t":1789656099336,"level":"warn","data":["props.pointerEvents is deprecated. Use style.pointerEvents"]}
+{"_e":"metro:bundling:started","_t":1789656110698,"id":"6","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1789656110698,"id":"6","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789656110700,"id":"6","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789656110800,"id":"6","progress":0.2763392082949224,"total":331,"current":174}
+{"_e":"metro:bundling:progress","_t":1789656110900,"id":"6","progress":0.2763392082949224,"total":2197,"current":342}
+{"_e":"metro:bundling:progress","_t":1789656111000,"id":"6","progress":0.8149747634777533,"total":2283,"current":2061}
+{"_e":"metro:bundling:done","_t":1789656111118,"id":"6","total":2283,"ms":420.560208}
+{"_e":"metro:client_log","_t":1789656122441,"level":"log","data":["🔧 Environment Config:"]}
+{"_e":"metro:client_log","_t":1789656122441,"level":"log","data":["- API_BASE_URL:","https://stormy-uncomplemental-amina.ngrok-free.dev/api"]}
+{"_e":"metro:client_log","_t":1789656122441,"level":"log","data":["- NODE_ENV:","development"]}
+{"_e":"metro:client_log","_t":1789656122441,"level":"log","data":["- EXPO_PUBLIC_API_BASE_URL env var:","undefined"]}
+{"_e":"metro:client_log","_t":1789656124295,"level":"warn","data":["⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."]}
+{"_e":"metro:bundling:started","_t":1789656267644,"id":"8","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789656276201,"id":"9","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
+{"_e":"metro:bundling:started","_t":1789656382954,"id":"a","platform":"web","environment":null,"entry":"src/components/GameScreen.tsx"}
