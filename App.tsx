@@ -1,6 +1,7 @@
 // import "./global.css";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { useEffect, useState } from "react";
 
 import { Router, Routes, Route, Navigate } from "@/router";
@@ -14,6 +15,7 @@ import Room from "@/components/Room";
 import Lobby from "@/components/Lobby";
 import AllRooms from "@/components/AllRooms";
 import GameScreen from "@/components/GameScreen";
+import RoundResultsScreen from "@/components/RoundResultsScreen";
 
 import { CrossPlatformStorage } from "@/utils/storage";
 import { useAndroidBackHandler } from "@/hooks/useAndroidBackHandler";
@@ -50,27 +52,33 @@ export default function App() {
   const defaultRoute = isAuthenticated ? "/home" : "/login";
 
   return (
-    <SafeAreaProvider>
-      <Router>
-        <AndroidBackHandler />
-        <Routes>
-          <Route path="/" element={<Navigate to={defaultRoute} replace />} />
-          <Route path="/login" element={<LoginScreen />} />
-          <Route path="/create-account" element={<CreateAccountScreen />} />
-          <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
-          <Route path="/home" element={<HomeScreen />} />
-          <Route path="/rooms" element={<AllRooms />} />
-          <Route path="/join-room" element={<JoinRoom />} />
-          <Route path="/room/:roomId" element={<Room />} />
-          <Route
-            path="/room/:roomId/code/:code/user/:userId"
-            element={<GameScreen />}
-          />
-          <Route path="/lobby/:roomId" element={<Lobby />} />
-          <Route path="*" element={<Navigate to={defaultRoute} replace />} />
-        </Routes>
-      </Router>
-      <StatusBar style="auto" />
-    </SafeAreaProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <Router>
+          <AndroidBackHandler />
+          <Routes>
+            <Route path="/" element={<Navigate to={defaultRoute} replace />} />
+            <Route path="/login" element={<LoginScreen />} />
+            <Route path="/create-account" element={<CreateAccountScreen />} />
+            <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
+            <Route path="/home" element={<HomeScreen />} />
+            <Route path="/rooms" element={<AllRooms />} />
+            <Route path="/join-room" element={<JoinRoom />} />
+            <Route path="/room/:roomId" element={<Room />} />
+            <Route
+              path="/room/:roomId/code/:code/user/:userId"
+              element={<GameScreen />}
+            />
+            <Route
+              path="/room/:roomId/code/:code/user/:userId/round/:roundNumber"
+              element={<RoundResultsScreen />}
+            />
+            <Route path="/lobby/:roomId" element={<Lobby />} />
+            <Route path="*" element={<Navigate to={defaultRoute} replace />} />
+          </Routes>
+        </Router>
+        <StatusBar style="auto" />
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }
